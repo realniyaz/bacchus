@@ -19,7 +19,7 @@ const GALLERY_ITEMS = [
     id: "g-pour",
     title: "Jackies Crown",
     subtitle: "Richer Sensory Experience",
-    image: "/jackie crown/pack.png",
+    image: "/jackie crown/pack-shot.png",
   },
   {
     id: "g-details",

@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 // import AgeGate from "@/components/layout/AgeGate";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import CustomCursor from "@/components/ui/CustomCursor";
+import BacchusAgent from "@/components/ui/BacchusAgent";
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-cormorant",
@@ -40,6 +41,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <BacchusAgent/>
         </SmoothScrollProvider>
       </body>
     </html>
