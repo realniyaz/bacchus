@@ -175,11 +175,11 @@ export default function BusinessHero() {
           >
             {/* Primary Action */}
             <Link
-              href="#commercial-models"
+              href="/brands"
               className="group relative w-full sm:w-auto px-9 py-3.5 sm:py-4 rounded-full bg-[#D4AF37] text-[#050505] font-sans font-bold text-xs uppercase tracking-[0.22em] overflow-hidden transition-all duration-300 hover:bg-[#F3D36A] shadow-[0_0_25px_rgba(212,175,55,0.3)] hover:shadow-[0_0_35px_rgba(243,211,106,0.5)] text-center cursor-pointer"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
-                Inquire Distribution
+                Explore Brands
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -197,7 +197,7 @@ export default function BusinessHero() {
               href="/contact"
               className="w-full sm:w-auto px-9 py-3.5 sm:py-4 rounded-full bg-[#12110F]/80 backdrop-blur-md text-[#F4F0E6] border border-[#D4AF37]/35 font-sans font-semibold text-xs uppercase tracking-[0.22em] transition-all duration-300 hover:border-[#D4AF37] hover:text-[#F3D36A] hover:bg-[#12110F] text-center cursor-pointer shadow-md"
             >
-              Private Label Options
+              Contact Us
             </Link>
           </div>
 

@@ -74,7 +74,7 @@ export default function BrandDeckModal() {
   };
 
   return (
-    <section className="relative w-full py-16 sm:py-24 bg-gradient-to-b from-[#FAF7F2] via-[#F3EDE2] to-[#EAE3D2] text-[#12110F] overflow-hidden select-none border-t border-[#8E7626]/20">
+    <section id = "deck-modal" className="relative w-full py-16 sm:py-24 bg-gradient-to-b from-[#FAF7F2] via-[#F3EDE2] to-[#EAE3D2] text-[#12110F] overflow-hidden select-none border-t border-[#8E7626]/20">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[radial-gradient(ellipse_at_center,rgba(212,175,55,0.12)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16 flex flex-col items-center">

@@ -9,30 +9,29 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const MENU_LINKS = [
-  { name: "The Vault", href: "/the-vault" },
-  { name: "Distillery Heritage", href: "/about" },
-  { name: "Talsons' Reserve 12", href: "/the-vault#talsons" },
-  { name: "Jackie's Crown", href: "/the-vault#jackies-crown" },
-  { name: "Crazy Boxer", href: "/the-vault#crazy-boxer" },
-  { name: "Rozzita Vodkas", href: "/the-vault#rozzita" },
+  { name: "Our Brands", href: "/brands" },
+  { name: "About Us", href: "/about" },
+  { name: "Global Presence", href: "/international" },
+  { name: "Business", href: "/business" },
+  { name: "Our Team", href: "/team" },
+  { name: "Invest", href: "/invest" },
 ];
 
 const LEGAL_LINKS = [
-  { name: "Privacy Shield", href: "/privacy" },
+  { name: "Privacy Policy", href: "/privacy" },
   { name: "Terms of Protocol", href: "/terms" },
   { name: "Statutory Compliance", href: "/compliance" },
   { name: "Cookie Governance", href: "/cookies" },
-  { name: "FSSAI & HACCP Licensure", href: "/licensing" },
   { name: "Trade Ethics & Export", href: "/export-policy" },
 ];
 
 const IMPORTANT_LINKS = [
   { name: "Global Operations", href: "/international" },
-  { name: "Private Cask Allocation", href: "/private-casks" },
-  { name: "Institutional Investors", href: "/investors" },
-  { name: "Press & Dossiers", href: "/media" },
-  { name: "Brand Asset Bureau", href: "/assets" },
-  { name: "Vault Sitemap", href: "/sitemap" },
+  { name: "Business Operations", href: "/business" },
+  { name: "Invest", href: "/invest" },
+  { name: "Press", href: "/media" },
+  { name: "Brand Asset Bureau", href: "/brands" },
+  
 ];
 
 const SOCIAL_MEDIA = [

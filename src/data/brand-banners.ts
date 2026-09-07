@@ -31,7 +31,7 @@ export const BRAND_BANNERS: BrandHeroBanner[] = [
       center: { value: "42.8%", label: "75° Proof" },
       right: { value: "100%", label: "Malt Grain" },
     },
-    link: "/the-vault",
+    link: "/brands#deck-modal",
   },
   {
     id: "jackies-crown",
@@ -46,7 +46,7 @@ export const BRAND_BANNERS: BrandHeroBanner[] = [
       center: { value: "42.8%", label: "Blended V/V" },
       right: { value: "1780", label: "Heritage Code" },
     },
-    link: "/brands/jackies-crown",
+    link: "/brands#deck-modal",
   },
   {
     id: "rozzita-vodka",
@@ -61,7 +61,7 @@ export const BRAND_BANNERS: BrandHeroBanner[] = [
       center: { value: "40.0%", label: "Pure Neutral" },
       right: { value: "4 CUTS", label: "Natural Flavors" },
     },
-    link: "/brands/rozzita-vodka",
+    link: "/brands#deck-modal",
   },
   {
     id: "crazy-boxer-whisky",
@@ -76,7 +76,7 @@ export const BRAND_BANNERS: BrandHeroBanner[] = [
       center: { value: "42.8%", label: "V/V Strength" },
       right: { value: "BOLD", label: "Malt & Grain" },
     },
-    link: "/kinetic-editions",
+    link: "/brands#deck-modal",
   },
   {
     id: "crazy-boxer-rum",
@@ -91,6 +91,6 @@ export const BRAND_BANNERS: BrandHeroBanner[] = [
       center: { value: "42.8%", label: "Molasses Cut" },
       right: { value: "AGED", label: "Oak Spiced" },
     },
-    link: "/brands/crazy-boxer-rum",
+    link: "/brands#deck-modal",
   },
 ];

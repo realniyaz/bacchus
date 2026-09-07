@@ -13,26 +13,70 @@ export default function TalsonsVideoFeature() {
   const textGroupRef = useRef<HTMLDivElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
   const tagsRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const imageWrapperRef = useRef<HTMLDivElement>(null);
+  const imageInnerRef = useRef<HTMLDivElement>(null);
+  const lightCausticRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {
-        // Autoplay policy fallback
-      });
-    }
+    const section = sectionRef.current;
+    if (!section) return;
 
     const ctx = gsap.context(() => {
-      // 1. Editorial text reveal
+      // 1. Smooth entrance scale & reveal
+      if (imageWrapperRef.current) {
+        gsap.fromTo(
+          imageWrapperRef.current,
+          { opacity: 0.6, scale: 1.05 },
+          {
+            opacity: 1,
+            scale: 1,
+            duration: 1.8,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 80%",
+            },
+          }
+        );
+      }
+
+      // 2. INFINITE CINEMATIC DRIFT (Breathing Camera Move)
+      // Gives the static banner an organic, floating video-like presence
+      if (imageInnerRef.current) {
+        gsap.to(imageInnerRef.current, {
+          scale: 1.045,
+          x: "-=18",
+          y: "+=8",
+          duration: 14,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+        });
+      }
+
+      // 3. CONTINUOUS LIQUID CAUSTIC LIGHT PULSE
+      // Simulates light refractions passing across the glass bottle
+      if (lightCausticRef.current) {
+        gsap.to(lightCausticRef.current, {
+          x: "110%",
+          opacity: 0.45,
+          duration: 9,
+          repeat: -1,
+          ease: "power1.inOut",
+          repeatDelay: 2.5,
+        });
+      }
+
+      // 4. Editorial Typography Staggered Reveal
       const textElements = textGroupRef.current?.children;
       if (textElements) {
         gsap.fromTo(
           textElements,
-          { opacity: 0, y: 24 },
+          { opacity: 0, y: 26 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.9,
+            duration: 0.95,
             stagger: 0.12,
             ease: "power3.out",
             scrollTrigger: {
@@ -43,11 +87,11 @@ export default function TalsonsVideoFeature() {
         );
       }
 
-      // 2. Sensory pills stagger
+      // 5. Sensory Pills Reveal
       if (tagsRef.current) {
         gsap.fromTo(
           tagsRef.current.children,
-          { opacity: 0, y: 12 },
+          { opacity: 0, y: 14 },
           {
             opacity: 1,
             y: 0,
@@ -62,15 +106,15 @@ export default function TalsonsVideoFeature() {
         );
       }
 
-      // 3. CTA entry
+      // 6. Primary CTA Entrance
       if (ctaRef.current) {
         gsap.fromTo(
           ctaRef.current,
-          { opacity: 0, y: 16 },
+          { opacity: 0, y: 18 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
+            duration: 0.85,
             ease: "power3.out",
             scrollTrigger: {
               trigger: ctaRef.current,
@@ -81,47 +125,87 @@ export default function TalsonsVideoFeature() {
       }
     }, sectionRef);
 
-    return () => ctx.revert();
+    // 7. MOUSE PARALLAX DISPLACEMENT (Desktop only)
+    // Image subtly shifts opposite to cursor position
+    const handleMouseMove = (e: MouseEvent) => {
+      if (window.innerWidth < 1024 || !imageInnerRef.current) return;
+      const { clientX, clientY } = e;
+      const xPos = (clientX / window.innerWidth - 0.5) * 16;
+      const yPos = (clientY / window.innerHeight - 0.5) * 12;
+
+      gsap.to(imageInnerRef.current, {
+        x: xPos,
+        y: yPos,
+        duration: 2.2,
+        ease: "power2.out",
+        overwrite: "auto",
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      ctx.revert();
+    };
   }, []);
 
   return (
-    <section data-cursor-theme="dark"
+    <section
+      data-cursor-theme="dark"
       ref={sectionRef}
       className="relative w-full min-h-[720px] lg:h-screen lg:max-h-[920px] flex flex-col justify-end lg:justify-center bg-obsidian overflow-hidden select-none"
     >
-      {/* ================= 1. VIDEO LAYER (CLEAN & DIRECT) ================= */}
+      {/* ================= 1. KINETIC MASTER BANNER CANVAS ================= */}
       <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 w-full h-[52vh] sm:h-[56vh] lg:h-full overflow-hidden">
-          <video
-            ref={videoRef}
-            src="/talson/creatives/talson-vid.mp4"
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className="w-full h-full object-cover object-[92%_center] max-sm:scale-110 max-sm:translate-x-8 sm:object-center lg:object-right filter brightness-[0.98] contrast-[1.04]"
-          />
+        <div
+          ref={imageWrapperRef}
+          className="absolute inset-0 w-full h-[52vh] sm:h-[56vh] lg:h-full overflow-hidden will-change-transform"
+        >
+          {/* Inner animated wrapper driving continuous drift and parallax */}
+          <div
+            ref={imageInnerRef}
+            className="relative w-full h-full will-change-transform transform-gpu scale-105"
+          >
+            <Image
+              src="/talson/creatives/banner.png"
+              alt="Talsons' Reserve 12 Single Malt Banner"
+              fill
+              priority
+              quality={95}
+              sizes="100vw"
+              className="object-cover object-[92%_center] max-sm:scale-115 max-sm:translate-x-8 sm:object-center lg:object-right filter brightness-[0.98] contrast-[1.05]"
+            />
 
-          {/* Mobile Bottom Scrim: Blends lower edge into the text panel on small screens only */}
+            {/* Traveling Caustic Light Sweep over the Bottle */}
+            <div
+              ref={lightCausticRef}
+              className="absolute inset-y-0 -left-[40%] w-[45%] pointer-events-none opacity-0 bg-gradient-to-r from-transparent via-[rgba(243,211,106,0.18)] to-transparent -skew-x-12 mix-blend-screen"
+            />
+          </div>
+
+          {/* Desktop Left Obsidian Gradient Curtain: Blends edge cleanly into text */}
+          <div className="hidden lg:block absolute inset-0 bg-gradient-to-r from-obsidian via-obsidian/85 via-42% to-transparent w-[65%]" />
+
+          {/* Mobile Bottom Scrim */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-obsidian/30 via-55% to-obsidian lg:hidden" />
-          
+
           {/* Mobile Top Shadow */}
           <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-obsidian/60 to-transparent lg:hidden" />
         </div>
+
+        {/* Ambient Pulsing Liquid Amber Bloom */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center_left,rgba(212,175,55,0.09)_0%,transparent_60%)] animate-pulse [animation-duration:6s]" />
       </div>
 
       {/* ================= 2. FOREGROUND EDITORIAL CONTENT ================= */}
       <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-16 pb-14 lg:py-0 flex flex-col justify-end lg:justify-center">
-        
-        {/* Mobile Spacer: Keeps upper viewport clear for the bottle */}
+        {/* Mobile Spacer: Keeps the upper bottle area clear */}
         <div className="lg:hidden h-[36vh] sm:h-[42vh] w-full pointer-events-none" />
 
         {/* Text and Actions Column */}
         <div className="w-full lg:max-w-lg xl:max-w-xl flex flex-col items-center lg:items-start text-center lg:text-left">
-          
           <div ref={textGroupRef} className="flex flex-col items-center lg:items-start w-full">
-            
             {/* Crest Mark */}
             <div className="flex items-center gap-2.5 mb-4">
               <div className="relative w-6 h-6 flex-shrink-0 drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]">
@@ -148,8 +232,8 @@ export default function TalsonsVideoFeature() {
 
             {/* Editorial Body */}
             <p className="font-sans text-xs sm:text-sm md:text-base text-champagne/95 leading-relaxed max-w-sm sm:max-w-md lg:max-w-lg mb-6 font-light drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">
-              Crafted in every element, perfected over time. Aged for twelve uninterrupted years 
-              through selected American and European Oak casks to impart subtle vanilla, rich caramel, 
+              Crafted in every element, perfected over time. Aged for twelve uninterrupted years
+              through selected American and European Oak casks to impart subtle vanilla, rich caramel,
               and a lingering distinctive warmth.
             </p>
           </div>
@@ -193,7 +277,6 @@ export default function TalsonsVideoFeature() {
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/40 to-transparent ease-in-out" />
             </Link>
           </div>
-
         </div>
       </div>
 

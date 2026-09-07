@@ -244,11 +244,11 @@ export default function GlobalPresenceHero() {
           className="w-full sm:w-auto flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5"
         >
           <Link
-            href="#globe-matrix"
+            href="/brands"
             className="group relative w-full sm:w-auto px-8 sm:px-9 py-3.5 rounded-full bg-[#D4AF37] text-[#050505] font-sans font-bold text-xs uppercase tracking-[0.22em] overflow-hidden transition-all duration-300 hover:bg-[#F3D36A] shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:shadow-[0_0_40px_rgba(243,211,106,0.5)] text-center cursor-pointer"
           >
             <span className="relative z-10 flex items-center justify-center gap-2">
-              Explore 19+ Markets
+              Explore Brands
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -262,10 +262,10 @@ export default function GlobalPresenceHero() {
           </Link>
 
           <Link
-            href="#concierge"
+            href="/contact"
             className="w-full sm:w-auto px-8 sm:px-9 py-3.5 rounded-full bg-[#0E0C0A]/80 backdrop-blur-md text-[#F4F0E6] border border-[#D4AF37]/35 font-sans font-semibold text-xs uppercase tracking-[0.22em] transition-all duration-300 hover:border-[#D4AF37] hover:text-[#F3D36A] hover:bg-[#1A1713] text-center cursor-pointer shadow-md"
           >
-            Initiate Trade Inquiry
+            Contact Us
           </Link>
         </div>
       </div>

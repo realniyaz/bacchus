@@ -1,12 +1,16 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Syne } from "next/font/google";
 import "./globals.css";
+
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
-// import AgeGate from "@/components/layout/AgeGate";
+import AgeGate from "@/components/layout/AgeGate";
+import CookieConsentModal from "@/components/layout/CookieConsentModal";
 import SmoothScrollProvider from "@/components/providers/SmoothScrollProvider";
 import CustomCursor from "@/components/ui/CustomCursor";
 import BacchusAgent from "@/components/ui/BacchusAgent";
+
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-cormorant",
@@ -36,12 +40,15 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${syne.variable}`}>
       <body className="bg-obsidian text-champagne selection:bg-gold-royal selection:text-obsidian antialiased">
         <CustomCursor />
+        {/* Verification Layers */}
+        <AgeGate />
+        <CookieConsentModal />
+
         <SmoothScrollProvider>
-          {/* <AgeGate /> */}
           <Navbar />
           {children}
           <Footer />
-          <BacchusAgent/>
+          <BacchusAgent />
         </SmoothScrollProvider>
       </body>
     </html>

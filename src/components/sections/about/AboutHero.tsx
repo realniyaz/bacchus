@@ -155,11 +155,11 @@ export default function AboutHero() {
             className="w-full sm:w-auto flex flex-col sm:flex-row items-center gap-3.5 mb-10"
           >
             <Link
-              href="#distillery"
+              href="/brands"
               className="group relative w-full sm:w-auto px-8 sm:px-9 py-3.5 rounded-full bg-gold-royal text-[#050505] font-sans font-bold text-xs uppercase tracking-[0.22em] overflow-hidden transition-all duration-300 hover:bg-gold-bright shadow-[0_0_25px_rgba(212,175,55,0.28)] hover:shadow-[0_0_35px_rgba(243,211,106,0.5)] text-center cursor-pointer"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
-                Explore Distillation
+                Explore Brands
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"

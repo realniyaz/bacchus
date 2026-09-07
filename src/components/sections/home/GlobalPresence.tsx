@@ -144,7 +144,7 @@ export default function GlobalPresence() {
 
           {/* DUAL MARKET SELECTOR SWITCH */}
           <div className="inline-flex items-center p-1 sm:p-1.5 rounded-full bg-surface-1/90 border border-gold-royal/30 backdrop-blur-md mt-6 sm:mt-8 shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
-            <button
+            <button suppressHydrationWarning
               onClick={() => setActiveTab("global")}
               className={`px-5 sm:px-8 py-2 rounded-full font-sans text-[10px] sm:text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 cursor-pointer ${
                 activeTab === "global"
@@ -154,7 +154,7 @@ export default function GlobalPresence() {
             >
               Global Operations
             </button>
-            <button
+            <button suppressHydrationWarning
               onClick={() => setActiveTab("domestic")}
               className={`px-5 sm:px-8 py-2 rounded-full font-sans text-[10px] sm:text-xs uppercase tracking-[0.2em] font-semibold transition-all duration-300 cursor-pointer ${
                 activeTab === "domestic"
