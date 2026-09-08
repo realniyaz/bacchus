@@ -1,6 +1,7 @@
-// src/app/layout.tsx
-import type { Metadata } from "next";
+"use client";
+
 import { Cormorant_Garamond, Syne } from "next/font/google";
+import { usePathname } from "next/navigation";
 import "./globals.css";
 
 import Navbar from "@/components/layout/Navbar";
@@ -25,30 +26,28 @@ const syne = Syne({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Bacchus Distillery | A Legacy In Every Drop",
-  description:
-    "Talsons' Reserve 12 Years Double Wood Matured. Distinctive luxury single malt whisky handcrafted since 1994.",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  const isAdminRoute = pathname.startsWith("/admin");
+
   return (
     <html lang="en" className={`${cormorant.variable} ${syne.variable}`}>
       <body className="bg-obsidian text-champagne selection:bg-gold-royal selection:text-obsidian antialiased">
         <CustomCursor />
-        {/* Verification Layers */}
-        <AgeGate />
-        <CookieConsentModal />
+        
+        {/* Suppress consumer verification gates and overlays on admin consoles */}
+        {!isAdminRoute && <AgeGate />}
+        {!isAdminRoute && <CookieConsentModal />}
 
         <SmoothScrollProvider>
-          <Navbar />
+          {!isAdminRoute && <Navbar />}
           {children}
-          <Footer />
-          <BacchusAgent />
+          {!isAdminRoute && <Footer />}
+          {!isAdminRoute && <BacchusAgent />}
         </SmoothScrollProvider>
       </body>
     </html>

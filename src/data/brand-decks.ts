@@ -36,7 +36,7 @@ export const BRAND_DECKS: BrandDeckItem[] = [
       volume: "750 ML",
       maturation: "12 YRS DOUBLE WOOD",
     },
-    link: "/the-vault",
+    link: "/contact",
     images: [
       { src: "/talson/creatives/productshot.png", caption: "The Cellar Cathedral — Cask Aging" },
       { src: "/talson/creatives/shot2.png", caption: "The Icon Plinth & Gold Foil Seal" },
@@ -59,7 +59,7 @@ export const BRAND_DECKS: BrandDeckItem[] = [
       volume: "750 ML",
       maturation: "BLENDED OAK",
     },
-    link: "/the-vault#jackies-crown",
+    link: "/contact",
     images: [
       { src: "/jackie crown/shot1.png", caption: "The Velvet Metropolis Twilight View" },
       { src: "/jackie crown/shot2.png", caption: "Highball Ritual with Citrus Ribbon" },
@@ -82,7 +82,7 @@ export const BRAND_DECKS: BrandDeckItem[] = [
       volume: "750 ML",
       maturation: "CHARRED WOOD IMPACT",
     },
-    link: "/kinetic-editions#crazy-boxer",
+    link: "/contact",
     images: [
       { src: "/crazy-boxer/shot1.png", caption: "The Industrial Foundry & Red Canister" },
       { src: "/crazy-boxer/shot2.png", caption: "Full Bottle & Gold Rimmed Glass" },
@@ -105,7 +105,7 @@ export const BRAND_DECKS: BrandDeckItem[] = [
       volume: "750 ML",
       maturation: "TRIPLE SUB-ZERO",
     },
-    link: "/brands#rozzita-vodkas",
+    link: "/contact",
     images: [
       { src: "/rozzita/shot1.png", caption: "Glacial Fracture Monolithic Ice Blocks" },
       { src: "/rozzita/shot2.png", caption: "The 4 Botanical Infusion Bottles" },
@@ -128,7 +128,7 @@ export const BRAND_DECKS: BrandDeckItem[] = [
       volume: "750 ML",
       maturation: "MOLASSES CASK",
     },
-    link: "/kinetic-editions#xxx-rum",
+    link: "/contact",
     images: [
       { src: "/rum/shot1.png", caption: "The Deep Cask Storm & Crashing Tides" },
       { src: "/rum/shot2.png", caption: "Warm Storm Lantern & Spices Plinth" },

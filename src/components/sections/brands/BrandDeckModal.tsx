@@ -302,7 +302,7 @@ export default function BrandDeckModal() {
                   href={selectedBrand.link}
                   className="w-full py-3 rounded-full bg-[#FAF7F2] text-[#12110F] hover:bg-[#D4AF37] font-sans font-bold text-[10px] uppercase tracking-[0.22em] text-center transition-all duration-300 shadow-md mt-1"
                 >
-                  Enter Brand Portal &rarr;
+                  Contact Now &rarr;
                 </Link>
               </div>
             </div>

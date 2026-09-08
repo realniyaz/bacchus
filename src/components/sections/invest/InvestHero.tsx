@@ -240,7 +240,7 @@ export default function InvestHero() {
           >
             {/* Primary Action */}
             <Link
-              href="/invest"
+              href="/invest#investment-models"
               className="group relative w-full sm:w-auto px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-[#D4AF37] text-[#050505] font-sans font-bold text-xs uppercase tracking-[0.22em] overflow-hidden transition-all duration-300 hover:bg-[#F3D36A] shadow-[0_0_25px_rgba(212,175,55,0.35)] hover:shadow-[0_0_35px_rgba(243,211,106,0.55)] text-center cursor-pointer"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">

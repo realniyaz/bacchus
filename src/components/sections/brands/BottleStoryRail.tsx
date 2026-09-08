@@ -290,7 +290,7 @@ export default function BottleStoryRail() {
                 style={{ background: activeBottle.accent }}
               >
                 <span className="relative z-10 flex items-center gap-1.5">
-                  Inspect Vault Profile
+                  Contact Now
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"

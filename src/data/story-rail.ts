@@ -36,7 +36,7 @@ export const RAIL_BOTTLES: RailBottleItem[] = [
     bottleImg: "/crazy-boxer/bottle-shot.png",
     accent: "#B51F24",
     glow: "rgba(181, 31, 36, 0.35)",
-    link: "/kinetic-editions",
+    link: "/contact",
   },
   {
     id: "talsons-12",
@@ -55,7 +55,7 @@ export const RAIL_BOTTLES: RailBottleItem[] = [
     bottleImg: "/talson/creatives/shot.png",
     accent: "#D4AF37",
     glow: "rgba(212, 175, 55, 0.32)",
-    link: "/the-vault",
+    link: "/contact",
   },
   {
     id: "jackies-crown",
@@ -74,7 +74,7 @@ export const RAIL_BOTTLES: RailBottleItem[] = [
     bottleImg: "/jackie crown/bottle-shot.png",
     accent: "#F3D36A",
     glow: "rgba(243, 211, 106, 0.28)",
-    link: "/brands/jackies-crown",
+    link: "/contact",
   },
   {
     id: "rozzita-vodka",
@@ -93,7 +93,7 @@ export const RAIL_BOTTLES: RailBottleItem[] = [
    bottleImg: "/rozzita/bottle-shot.png",
     accent: "#F4F0E6",
     glow: "rgba(244, 240, 230, 0.25)",
-    link: "/brands/rozzita-vodka",
+    link: "/contact",
   },
   {
     id: "crazy-boxer-rum",
@@ -112,6 +112,6 @@ export const RAIL_BOTTLES: RailBottleItem[] = [
     bottleImg: "/rum/bottle-shot.png",
     accent: "#8E7626",
     glow: "rgba(142, 118, 38, 0.35)",
-    link: "/brands/crazy-boxer-rum",
+    link: "/contact",
   },
 ];
