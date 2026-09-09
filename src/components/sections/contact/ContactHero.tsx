@@ -78,7 +78,7 @@ export default function ContactHero() {
         <div ref={eyebrowRef} className="flex items-center gap-3 mb-3">
           <span className="w-5 sm:w-8 h-[1px] bg-[#D4AF37]/50" />
           <p className="font-serif tracking-[0.25em] text-[10px] sm:text-xs text-[#D4AF37] uppercase font-semibold">
-            Bacchus World Spirits
+            Bacchus Distellery
           </p>
           <span className="w-5 sm:w-8 h-[1px] bg-[#D4AF37]/50" />
         </div>

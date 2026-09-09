@@ -206,7 +206,7 @@ export default function DistilleryOrigin() {
                 &ldquo;We don&apos;t just make spirits &mdash; we craft experiences, tailored for every palate and poured with distinction.&rdquo;
               </p>
               <span className="block mt-2 font-sans text-[10px] uppercase tracking-[0.2em] text-[#8E7626] font-bold">
-                House of Bacchus Manifesto
+                Bacchus Distellery Manifesto
               </span>
             </blockquote>
 

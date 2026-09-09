@@ -150,7 +150,7 @@ export default function InvestorContactBanner() {
         {/* ================= 3. ONE-LINE COMPACT FOOTER STRIP ================= */}
         <div className="mt-8 pt-4 border-t border-[#8E7626]/20 flex flex-col sm:flex-row items-center justify-between gap-2 text-center text-[10px] text-[#6E6554] font-sans">
           <span>Noida - 132, UP &bull; +91 120 466 425</span>
-          <span className="text-[#8E7626] font-medium">contact@bacchusdistillery.com</span>
+          <span className="text-[#8E7626] font-medium">contact@bacchusdistilleryindia.com</span>
         </div>
 
       </div>

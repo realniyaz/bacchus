@@ -123,7 +123,7 @@ export default function AboutHero() {
           <div ref={eyebrowRef} className="flex items-center gap-2.5 mb-4">
             <span className="w-6 h-[1px] bg-gold-royal/50" />
             <p className="font-serif tracking-[0.28em] text-[10px] sm:text-xs text-gold-royal uppercase font-semibold">
-              BACCHUS WORLD SPIRITS &bull; EST. 1994
+              BACCHUS DISTELLERY &bull; EST. 1994
             </p>
             <span className="w-6 h-[1px] bg-gold-royal/50" />
           </div>

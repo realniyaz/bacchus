@@ -179,7 +179,7 @@ export default function CmdDossier() {
 
               {/* Concise Narrative */}
               <p className="font-sans text-xs sm:text-[13px] text-[#575043] font-light leading-relaxed max-w-lg mb-5">
-                Guiding the global expansion of Bacchus World Spirits across 19+ nations, Mohit Shukla aligns 32+ years of distillation craft in Punjab with international trade governance, commanding stringent compliance across HMRC, ISO 9001:2015, and FSSAI standards.
+                Guiding the global expansion of Bacchus Distillery across 19+ nations, Mohit Shukla aligns 32+ years of distillation craft in Punjab with international trade governance, commanding stringent compliance across HMRC, ISO 9001:2015, and FSSAI standards.
               </p>
 
               {/* Two-Column Telemetry */}
