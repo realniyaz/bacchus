@@ -317,7 +317,7 @@ export default function FooterContact() {
                       <label className="text-[10px] uppercase font-sans tracking-[0.18em] text-[#554E41] font-semibold">
                         Full Name *
                       </label>
-                      <input
+                      <input suppressHydrationWarning
                         type="text"
                         required
                         placeholder="Your Name"
