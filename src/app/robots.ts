@@ -3,7 +3,7 @@ import { MetadataRoute } from "next";
 import { SITE_CONFIG } from "@/config/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = SITE_CONFIG?.seo?.siteUrl || "https://bacchusdistillery.com";
+  const baseUrl = SITE_CONFIG?.seo?.siteUrl || "https://bacchusdistilleryindia.com";
 
   return {
     rules: [
