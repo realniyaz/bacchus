@@ -176,7 +176,7 @@ export default function HeritageOverview() {
             {/* Quick Action Badges */}
             <div className="flex items-center gap-3 mb-6 w-full sm:w-auto">
               <Link
-                href="/the-vault"
+                href="/brands"
                 className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-[#12110F] text-[#FAF7F0] font-sans font-semibold text-[11px] uppercase tracking-[0.18em] transition-all duration-300 hover:bg-[#8E7626] text-center cursor-pointer shadow-sm"
               >
                 Our Brands
