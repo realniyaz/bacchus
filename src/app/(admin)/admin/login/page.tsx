@@ -72,7 +72,7 @@ export default function AdminLoginPage() {
       formData.append("password", password);
 
       const apiUrl =
-        process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+        process.env.NEXT_PUBLIC_API_URL || "https://bacchus-crm-backend.onrender.com/api/v1";
 
       const res = await axios.post(`${apiUrl}/auth/login`, formData, {
         headers: {
@@ -170,7 +170,7 @@ export default function AdminLoginPage() {
 
           <div className="flex items-center gap-2.5 mt-8">
             {CINEMATIC_STORIES.map((_, i) => (
-              <button
+              <button suppressHydrationWarning
                 key={i}
                 type="button"
                 onClick={() => setActiveIndex(i)}
@@ -249,7 +249,7 @@ export default function AdminLoginPage() {
               </label>
               <div className="relative flex items-center">
                 <Mail className="absolute left-3.5 w-4 h-4 text-[#8C8474] pointer-events-none" />
-                <input
+                <input suppressHydrationWarning
                   type="email"
                   required
                   value={email}

@@ -72,7 +72,7 @@ export default function TradeAnalyticsPage() {
     setErrorMsg(null);
 
     const token = typeof window !== "undefined" ? localStorage.getItem("bacchus_token") : null;
-    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1";
+const apiUrl = process.env.NEXT_PUBLIC_API_URL || "https://bacchus-crm-backend.onrender.com/api/v1";
     const headers = token ? { Authorization: `Bearer ${token}` } : {};
 
     try {
