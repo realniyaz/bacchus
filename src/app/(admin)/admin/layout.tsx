@@ -19,6 +19,7 @@ import {
   Bell,
   Sparkles,
   PersonStandingIcon,
+  Form,
 } from "lucide-react";
 
 interface NavItem {
@@ -31,6 +32,7 @@ interface NavItem {
 const ADMIN_NAV: NavItem[] = [
   { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
   { label: "Leads Desk", href: "/admin/leads", icon: Users, badge: "Live" },
+  { label: "Inquiries", href: "/admin/inquiries", icon: Form, badge: "Live" },
   { label: "Customers", href: "/admin/customers", icon: Building2 },
   { label: "Products", href: "/admin/products", icon: PersonStandingIcon },
   { label: "Invoicing & Excise", href: "/admin/invoices", icon: Receipt },
