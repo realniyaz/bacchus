@@ -13,6 +13,8 @@ import {
   Sparkles,
   Clock,
   Plus,
+  Briefcase,
+  FileText,
 } from "lucide-react";
 import { Lead, LeadStatus } from "@/types/admin/lead";
 import { leadsApi } from "@/services/leads";
@@ -135,7 +137,7 @@ export default function LeadDetailDrawer({ lead, onClose, onUpdated }: Props) {
               </span>
               <h3 className="font-serif text-xl font-bold mt-0.5">{lead.company_name}</h3>
             </div>
-            <button onClick={onClose} className="text-[#7A7366] hover:text-[#14120E]">
+            <button onClick={onClose} className="text-[#7A7366] hover:text-[#14120E] cursor-pointer">
               <X className="w-5 h-5" />
             </button>
           </div>
@@ -144,7 +146,7 @@ export default function LeadDetailDrawer({ lead, onClose, onUpdated }: Props) {
           <div className="flex border-b border-[#8E7626]/20 bg-[#FAF7F2] px-6 pt-2">
             <button
               onClick={() => setActiveTab("details")}
-              className={`pb-2.5 px-3 text-xs font-bold uppercase tracking-wider transition-colors ${
+              className={`pb-2.5 px-3 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                 activeTab === "details"
                   ? "border-b-2 border-[#8E7626] text-[#8E7626]"
                   : "text-[#7A7366] hover:text-[#14120E]"
@@ -154,7 +156,7 @@ export default function LeadDetailDrawer({ lead, onClose, onUpdated }: Props) {
             </button>
             <button
               onClick={() => setActiveTab("activities")}
-              className={`pb-2.5 px-3 text-xs font-bold uppercase tracking-wider transition-colors ${
+              className={`pb-2.5 px-3 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                 activeTab === "activities"
                   ? "border-b-2 border-[#8E7626] text-[#8E7626]"
                   : "text-[#7A7366] hover:text-[#14120E]"
@@ -164,7 +166,7 @@ export default function LeadDetailDrawer({ lead, onClose, onUpdated }: Props) {
             </button>
             <button
               onClick={() => setActiveTab("followups")}
-              className={`pb-2.5 px-3 text-xs font-bold uppercase tracking-wider transition-colors ${
+              className={`pb-2.5 px-3 text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                 activeTab === "followups"
                   ? "border-b-2 border-[#8E7626] text-[#8E7626]"
                   : "text-[#7A7366] hover:text-[#14120E]"
@@ -204,12 +206,16 @@ export default function LeadDetailDrawer({ lead, onClose, onUpdated }: Props) {
                   </h4>
                   <div className="space-y-2 text-xs bg-white/70 p-4 rounded-xl border border-[#8E7626]/15">
                     <div className="flex items-center gap-2 text-[#554F43]">
+                      <Briefcase className="w-4 h-4 text-[#8E7626]" />
+                      <span>Model: <strong className="text-[#14120E]">{lead.commercial_model || "DISTRIBUTION"}</strong></span>
+                    </div>
+                    <div className="flex items-center gap-2 text-[#554F43]">
                       <Globe className="w-4 h-4 text-[#8E7626]" />
                       <span>{lead.country} {lead.state ? `(${lead.state})` : ""}</span>
                     </div>
                     <div className="flex items-center gap-2 text-[#554F43]">
                       <Mail className="w-4 h-4 text-[#8E7626]" />
-                      <a href={`mailto:${lead.email}`} className="underline">{lead.email}</a>
+                      <a href={`mailto:${lead.email}`} className="underline hover:text-[#8E7626]">{lead.email}</a>
                     </div>
                     {lead.phone && (
                       <div className="flex items-center gap-2 text-[#554F43]">
@@ -219,7 +225,7 @@ export default function LeadDetailDrawer({ lead, onClose, onUpdated }: Props) {
                     )}
                     <div className="flex items-center gap-2 text-[#554F43]">
                       <Box className="w-4 h-4 text-[#8E7626]" />
-                      <span>Volume: {lead.volume_estimate || "Unspecified"}</span>
+                      <span>Volume / Message: <strong className="text-[#14120E]">{lead.volume_estimate || "Unspecified"}</strong></span>
                     </div>
                   </div>
                 </div>
@@ -238,7 +244,7 @@ export default function LeadDetailDrawer({ lead, onClose, onUpdated }: Props) {
                         type="button"
                         disabled={updating || lead.status === st}
                         onClick={() => handleStatusChange(st)}
-                        className={`px-3 py-2.5 rounded-lg text-xs font-mono font-bold uppercase transition-all ${
+                        className={`px-3 py-2.5 rounded-lg text-xs font-mono font-bold uppercase transition-all cursor-pointer ${
                           lead.status === st
                             ? "bg-[#14120E] text-[#FAF7F2]"
                             : "bg-[#EFE8DC]/70 hover:bg-[#EFE8DC] text-[#554F43] border border-[#8E7626]/20"
@@ -279,7 +285,7 @@ export default function LeadDetailDrawer({ lead, onClose, onUpdated }: Props) {
                     <button
                       type="submit"
                       disabled={updating}
-                      className="px-3.5 py-1.5 text-xs font-bold rounded-lg bg-[#14120E] text-[#FAF7F2]"
+                      className="px-3.5 py-1.5 text-xs font-bold rounded-lg bg-[#14120E] text-[#FAF7F2] cursor-pointer"
                     >
                       Record Entry
                     </button>
@@ -296,12 +302,29 @@ export default function LeadDetailDrawer({ lead, onClose, onUpdated }: Props) {
                     <div className="py-6 text-center text-xs text-[#7A7366]">No interactions logged yet.</div>
                   ) : (
                     timeline.map((act) => (
-                      <div key={act.id} className="p-3 rounded-lg bg-white/70 border border-[#8E7626]/15 text-xs space-y-1">
+                      <div key={act.id} className="p-3.5 rounded-xl bg-white border border-[#8E7626]/20 text-xs space-y-1.5 shadow-xs">
                         <div className="flex items-center justify-between text-[10px] text-[#7A7366] font-mono">
-                          <span className="font-bold text-[#8E7626]">{act.type}</span>
-                          <span>{new Date(act.created_at).toLocaleDateString()}</span>
+                          <span className="font-bold text-[#8E7626] uppercase">
+                            {act.meta_data?.source === "WEBSITE_CONTACT_LEDGER" ? "WEB INBOUND DISPATCH" : act.type}
+                          </span>
+                          <span>{new Date(act.created_at).toLocaleString()}</span>
                         </div>
-                        <p className="text-[#14120E]">{act.meta_data?.note || "Status updated"}</p>
+
+                        {/* Inbound Web Message Rendering */}
+                        {act.meta_data?.full_dispatch ? (
+                          <div className="mt-1 p-2.5 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/20">
+                            {act.meta_data.category_selected && (
+                              <span className="text-[10px] font-mono font-bold text-[#8E7626] uppercase block mb-1">
+                                Category: {act.meta_data.category_selected}
+                              </span>
+                            )}
+                            <p className="text-xs text-[#14120E] whitespace-pre-wrap font-sans leading-relaxed">
+                              "{act.meta_data.full_dispatch}"
+                            </p>
+                          </div>
+                        ) : (
+                          <p className="text-[#14120E]">{act.meta_data?.note || "Activity registered"}</p>
+                        )}
                       </div>
                     ))
                   )}
@@ -353,7 +376,7 @@ export default function LeadDetailDrawer({ lead, onClose, onUpdated }: Props) {
                 <button
                   type="submit"
                   disabled={updating}
-                  className="w-full py-2.5 rounded-lg bg-[#14120E] text-[#FAF7F2] font-bold text-xs uppercase tracking-wider"
+                  className="w-full py-2.5 rounded-lg bg-[#14120E] text-[#FAF7F2] font-bold text-xs uppercase tracking-wider cursor-pointer"
                 >
                   Confirm Agenda
                 </button>

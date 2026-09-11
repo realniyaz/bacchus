@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Loader2, AlertCircle, RotateCcw } from "lucide-react";
+import { Loader2, AlertCircle, CheckCircle2, RotateCcw } from "lucide-react";
 import { inquiriesApi } from "@/services/inquiries";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -12,6 +12,7 @@ export default function ContactLedgerAndHQ() {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
+    phone: "",
     category: "General Corporate Inquiries",
     message: "",
   });
@@ -77,6 +78,7 @@ export default function ContactLedgerAndHQ() {
       const res = await inquiriesApi.submitContact({
         name: formState.name.trim(),
         email: formState.email.trim(),
+        phone: formState.phone.trim() || undefined,
         category: formState.category,
         message: formState.message.trim(),
       });
@@ -86,6 +88,7 @@ export default function ContactLedgerAndHQ() {
     } catch (err: any) {
       setErrorMsg(
         err.response?.data?.detail ||
+          err.message ||
           "Failed to dispatch inquiry to the corporate desk. Please check your connection and retry."
       );
     } finally {
@@ -96,9 +99,11 @@ export default function ContactLedgerAndHQ() {
   const handleReset = () => {
     setSubmitted(false);
     setReferenceCode(null);
+    setErrorMsg(null);
     setFormState({
       name: "",
       email: "",
+      phone: "",
       category: "General Corporate Inquiries",
       message: "",
     });
@@ -137,7 +142,7 @@ export default function ContactLedgerAndHQ() {
             </h2>
 
             <p className="font-sans text-xs sm:text-sm text-[#524E45] font-light leading-relaxed mb-8">
-              Reach out directly to our commercial directors, export trade division, or corporate liaison desks for priority assistance.
+              Reach out directly to our commercial directors, export trade division, or corporate liaison desks for priority assistance[cite: 11].
             </p>
 
             {/* Channels Directory */}
@@ -148,10 +153,10 @@ export default function ContactLedgerAndHQ() {
                   Executive Desk
                 </span>
                 <a
-                  href="mailto:md@bacchusdistelleryindia.com"
+                  href="mailto:md@bacchusspiritsglobal.com"
                   className="font-serif text-sm sm:text-base font-bold text-[#14120E] hover:text-[#8E7626] transition-colors"
                 >
-                  md@bacchusdistelleryindia.com
+                  md@bacchusspiritsglobal.com
                 </a>
               </div>
 
@@ -184,7 +189,7 @@ export default function ContactLedgerAndHQ() {
               {/* Operating Hours */}
               <div className="flex items-center gap-2 text-xs font-sans text-[#77736A] pt-2 px-1">
                 <span className="w-2 h-2 rounded-full bg-[#8E7626]" />
-                <span>Operating Desk: 09:00 AM – 05:00 PM IST | Mon – Fri</span>
+                <span>Operating Desk: 09:00 AM – 05:00 PM IST | Mon – Fri[cite: 11]</span>
               </div>
             </div>
           </div>
@@ -196,15 +201,17 @@ export default function ContactLedgerAndHQ() {
           >
             {submitted ? (
               <div className="text-center py-10 space-y-4">
-                <div className="w-12 h-12 rounded-full bg-[#8E7626]/10 text-[#8E7626] font-serif font-bold text-xl flex items-center justify-center mx-auto mb-2">
-                  ✓
+                <div className="w-14 h-14 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 flex items-center justify-center mx-auto shadow-xs">
+                  <CheckCircle2 className="w-7 h-7" />
                 </div>
-                <h3 className="font-serif text-2xl font-bold text-[#14120E] mb-1">
-                  Inquiry Dispatched
-                </h3>
-                <p className="font-sans text-xs sm:text-sm text-[#524E45] max-w-sm mx-auto">
-                  Thank you. Your dispatch has been transmitted to our corporate liaison desk. We will respond within 24 business hours.
-                </p>
+                <div>
+                  <h3 className="font-serif text-2xl font-bold text-[#14120E] mb-1">
+                    Inquiry Dispatched
+                  </h3>
+                  <p className="font-sans text-xs sm:text-sm text-[#524E45] max-w-sm mx-auto">
+                    Thank you. Your dispatch has been logged in the institutional operations ledger. A regional director will respond within 24 business hours[cite: 11].
+                  </p>
+                </div>
 
                 {referenceCode && (
                   <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/30">
@@ -231,34 +238,34 @@ export default function ContactLedgerAndHQ() {
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 {errorMsg && (
-                  <div className="p-3 rounded-lg bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2">
+                  <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2.5">
                     <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
                     <span>{errorMsg}</span>
                   </div>
                 )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
                   {/* Name */}
                   <div className="flex flex-col">
                     <label className="text-[10px] uppercase font-sans tracking-wider text-[#77736A] font-semibold mb-1">
-                      Full Name / Entity
+                      Full Name / Entity *
                     </label>
                     <input
                       type="text"
                       required
-                      placeholder="e.g. Sterling Imports Ltd."
+                      placeholder="e.g. Apex Imports Ltd."
                       value={formState.name}
                       onChange={(e) =>
                         setFormState({ ...formState, name: e.target.value })
                       }
-                      className="px-3.5 py-2.5 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/20 text-[#14120E] text-xs focus:outline-none focus:border-[#8E7626] transition-colors"
+                      className="px-3 py-2.5 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/20 text-[#14120E] text-xs focus:outline-none focus:border-[#8E7626] transition-colors"
                     />
                   </div>
 
                   {/* Email */}
                   <div className="flex flex-col">
                     <label className="text-[10px] uppercase font-sans tracking-wider text-[#77736A] font-semibold mb-1">
-                      Corporate Email
+                      Corporate Email *
                     </label>
                     <input
                       type="email"
@@ -268,7 +275,23 @@ export default function ContactLedgerAndHQ() {
                       onChange={(e) =>
                         setFormState({ ...formState, email: e.target.value })
                       }
-                      className="px-3.5 py-2.5 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/20 text-[#14120E] text-xs focus:outline-none focus:border-[#8E7626] transition-colors"
+                      className="px-3 py-2.5 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/20 text-[#14120E] text-xs focus:outline-none focus:border-[#8E7626] transition-colors"
+                    />
+                  </div>
+
+                  {/* Phone */}
+                  <div className="flex flex-col">
+                    <label className="text-[10px] uppercase font-sans tracking-wider text-[#77736A] font-semibold mb-1">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      placeholder="+91 98765 43210"
+                      value={formState.phone}
+                      onChange={(e) =>
+                        setFormState({ ...formState, phone: e.target.value })
+                      }
+                      className="px-3 py-2.5 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/20 text-[#14120E] text-xs focus:outline-none focus:border-[#8E7626] transition-colors"
                     />
                   </div>
                 </div>
@@ -308,7 +331,8 @@ export default function ContactLedgerAndHQ() {
                   <textarea
                     rows={4}
                     required
-                    placeholder="Provide details regarding your inquiry, territory, or volume projections..."
+                    minLength={5}
+                    placeholder="Provide details regarding your inquiry, target territory, or volume projections..."
                     value={formState.message}
                     onChange={(e) =>
                       setFormState({ ...formState, message: e.target.value })
@@ -367,7 +391,7 @@ export default function ContactLedgerAndHQ() {
               <div className="flex flex-col gap-2 w-full pt-4 border-t border-[#8E7626]/20 mb-6">
                 <div className="flex items-start gap-2 text-xs text-[#524E45]">
                   <span className="font-bold text-[#8E7626] mt-0.5">&bull;</span>
-                  <span>Directly connected via Noida-Greater Noida Expressway.</span>
+                  <span>Directly connected via Noida-Greater Noida Expressway[cite: 11].</span>
                 </div>
                 <div className="flex items-start gap-2 text-xs text-[#524E45]">
                   <span className="font-bold text-[#8E7626] mt-0.5">&bull;</span>
@@ -399,7 +423,7 @@ export default function ContactLedgerAndHQ() {
             {/* Embedded Location Map Stage */}
             <div className="lg:col-span-7 h-[280px] sm:h-[350px] w-full rounded-2xl overflow-hidden border border-[#8E7626]/20 relative shadow-inner bg-[#FAF7F2]">
               <iframe
-                title="Bacchus Distellery Noida HQ"
+                title="Bacchus Spirits Noida HQ"
                 src="https://maps.google.com/maps?q=B+28+Manaar+Tower+Sector+132+Noida+Uttar+Pradesh+201304&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0 filter grayscale-[20%] contrast-[1.05]"
                 loading="lazy"
