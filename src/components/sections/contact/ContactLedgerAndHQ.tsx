@@ -3,6 +3,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Loader2, AlertCircle, RotateCcw } from "lucide-react";
+import { inquiriesApi } from "@/services/inquiries";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,7 +15,11 @@ export default function ContactLedgerAndHQ() {
     category: "General Corporate Inquiries",
     message: "",
   });
+
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [referenceCode, setReferenceCode] = useState<string | null>(null);
 
   const sectionRef = useRef<HTMLElement>(null);
   const ledgerGridRef = useRef<HTMLDivElement>(null);
@@ -62,9 +68,40 @@ export default function ContactLedgerAndHQ() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setErrorMsg(null);
+
+    try {
+      const res = await inquiriesApi.submitContact({
+        name: formState.name.trim(),
+        email: formState.email.trim(),
+        category: formState.category,
+        message: formState.message.trim(),
+      });
+
+      setReferenceCode(res.reference_code);
+      setSubmitted(true);
+    } catch (err: any) {
+      setErrorMsg(
+        err.response?.data?.detail ||
+          "Failed to dispatch inquiry to the corporate desk. Please check your connection and retry."
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleReset = () => {
+    setSubmitted(false);
+    setReferenceCode(null);
+    setFormState({
+      name: "",
+      email: "",
+      category: "General Corporate Inquiries",
+      message: "",
+    });
   };
 
   return (
@@ -78,7 +115,6 @@ export default function ContactLedgerAndHQ() {
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.08)_0%,transparent_70%)] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
-        
         {/* ================= PART 1: SPLIT INQUIRIES & INTAKE FORM ================= */}
         <div
           ref={ledgerGridRef}
@@ -95,7 +131,9 @@ export default function ContactLedgerAndHQ() {
 
             <h2 className="font-serif text-3xl sm:text-4xl text-[#14120E] tracking-tight leading-[1.1] mb-4">
               Direct Channels. <br />
-              <span className="italic font-light text-[#8E7626]">Prompt Engagements.</span>
+              <span className="italic font-light text-[#8E7626]">
+                Prompt Engagements.
+              </span>
             </h2>
 
             <p className="font-sans text-xs sm:text-sm text-[#524E45] font-light leading-relaxed mb-8">
@@ -104,7 +142,6 @@ export default function ContactLedgerAndHQ() {
 
             {/* Channels Directory */}
             <div className="flex flex-col gap-4 border-t border-[#8E7626]/20 pt-6">
-              
               {/* Executive Desk */}
               <div className="flex flex-col gap-1 p-3.5 rounded-xl bg-[#FFFFFF] border border-[#8E7626]/20 shadow-xs">
                 <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736A] font-semibold">
@@ -158,8 +195,8 @@ export default function ContactLedgerAndHQ() {
             className="lg:col-span-7 rounded-2xl bg-[#FFFFFF] border border-[#8E7626]/25 p-6 sm:p-8 shadow-[0_12px_35px_rgba(142,118,38,0.08)]"
           >
             {submitted ? (
-              <div className="text-center py-12">
-                <div className="w-12 h-12 rounded-full bg-[#8E7626]/10 text-[#8E7626] font-serif font-bold text-xl flex items-center justify-center mx-auto mb-3">
+              <div className="text-center py-10 space-y-4">
+                <div className="w-12 h-12 rounded-full bg-[#8E7626]/10 text-[#8E7626] font-serif font-bold text-xl flex items-center justify-center mx-auto mb-2">
                   ✓
                 </div>
                 <h3 className="font-serif text-2xl font-bold text-[#14120E] mb-1">
@@ -168,9 +205,38 @@ export default function ContactLedgerAndHQ() {
                 <p className="font-sans text-xs sm:text-sm text-[#524E45] max-w-sm mx-auto">
                   Thank you. Your dispatch has been transmitted to our corporate liaison desk. We will respond within 24 business hours.
                 </p>
+
+                {referenceCode && (
+                  <div className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/30">
+                    <span className="text-[11px] uppercase tracking-wider text-[#77736A] font-medium">
+                      Tracking Reference:
+                    </span>
+                    <span className="font-mono text-xs font-bold text-[#8E7626]">
+                      {referenceCode}
+                    </span>
+                  </div>
+                )}
+
+                <div className="pt-2">
+                  <button
+                    onClick={handleReset}
+                    type="button"
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-[#8E7626] hover:text-[#14120E] transition-colors cursor-pointer"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5" />
+                    <span>Submit another inquiry</span>
+                  </button>
+                </div>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                {errorMsg && (
+                  <div className="p-3 rounded-lg bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2">
+                    <AlertCircle className="w-4 h-4 shrink-0 text-rose-600" />
+                    <span>{errorMsg}</span>
+                  </div>
+                )}
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {/* Name */}
                   <div className="flex flex-col">
@@ -182,7 +248,9 @@ export default function ContactLedgerAndHQ() {
                       required
                       placeholder="e.g. Sterling Imports Ltd."
                       value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
+                      onChange={(e) =>
+                        setFormState({ ...formState, name: e.target.value })
+                      }
                       className="px-3.5 py-2.5 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/20 text-[#14120E] text-xs focus:outline-none focus:border-[#8E7626] transition-colors"
                     />
                   </div>
@@ -197,7 +265,9 @@ export default function ContactLedgerAndHQ() {
                       required
                       placeholder="name@company.com"
                       value={formState.email}
-                      onChange={(e) => setFormState({ ...formState, email: e.target.value })}
+                      onChange={(e) =>
+                        setFormState({ ...formState, email: e.target.value })
+                      }
                       className="px-3.5 py-2.5 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/20 text-[#14120E] text-xs focus:outline-none focus:border-[#8E7626] transition-colors"
                     />
                   </div>
@@ -210,13 +280,23 @@ export default function ContactLedgerAndHQ() {
                   </label>
                   <select
                     value={formState.category}
-                    onChange={(e) => setFormState({ ...formState, category: e.target.value })}
+                    onChange={(e) =>
+                      setFormState({ ...formState, category: e.target.value })
+                    }
                     className="px-3.5 py-2.5 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/20 text-[#14120E] text-xs focus:outline-none focus:border-[#8E7626] transition-colors cursor-pointer"
                   >
-                    <option value="General Corporate Inquiries">General Corporate Inquiries</option>
-                    <option value="Global Distribution Partnership">Global Distribution Partnership</option>
-                    <option value="Private Label & Turnkey Distillation">Private Label &amp; Turnkey Distillation</option>
-                    <option value="Institutional Spirit Allocation">Institutional Spirit Allocation</option>
+                    <option value="General Corporate Inquiries">
+                      General Corporate Inquiries
+                    </option>
+                    <option value="Global Distribution Partnership">
+                      Global Distribution Partnership
+                    </option>
+                    <option value="Private Label & Turnkey Distillation">
+                      Private Label &amp; Turnkey Distillation
+                    </option>
+                    <option value="Institutional Spirit Allocation">
+                      Institutional Spirit Allocation
+                    </option>
                   </select>
                 </div>
 
@@ -230,7 +310,9 @@ export default function ContactLedgerAndHQ() {
                     required
                     placeholder="Provide details regarding your inquiry, territory, or volume projections..."
                     value={formState.message}
-                    onChange={(e) => setFormState({ ...formState, message: e.target.value })}
+                    onChange={(e) =>
+                      setFormState({ ...formState, message: e.target.value })
+                    }
                     className="px-3.5 py-2.5 rounded-lg bg-[#FAF7F2] border border-[#8E7626]/20 text-[#14120E] text-xs focus:outline-none focus:border-[#8E7626] transition-colors resize-none"
                   />
                 </div>
@@ -238,9 +320,17 @@ export default function ContactLedgerAndHQ() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-full bg-[#14120E] text-[#FAF7F2] font-sans text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#8E7626] transition-colors shadow-md cursor-pointer mt-1"
+                  disabled={loading}
+                  className="w-full py-3.5 rounded-full bg-[#14120E] text-[#FAF7F2] font-sans text-xs uppercase tracking-[0.2em] font-bold hover:bg-[#8E7626] transition-colors shadow-md cursor-pointer mt-1 flex items-center justify-center gap-2 disabled:opacity-60"
                 >
-                  Transmit Inquiry
+                  {loading ? (
+                    <>
+                      <Loader2 className="w-3.5 h-3.5 animate-spin text-[#D4AF37]" />
+                      <span>Transmitting Inquiry...</span>
+                    </>
+                  ) : (
+                    <span>Transmit Inquiry</span>
+                  )}
                 </button>
               </form>
             )}
@@ -254,7 +344,6 @@ export default function ContactLedgerAndHQ() {
           className="rounded-3xl bg-[#FFFFFF] border border-[#8E7626]/25 p-6 sm:p-10 shadow-[0_16px_40px_rgba(142,118,38,0.09)]"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
             {/* HQ Address Dossier */}
             <div className="lg:col-span-5 flex flex-col items-start">
               <div className="flex items-center gap-2 mb-2">
@@ -317,10 +406,8 @@ export default function ContactLedgerAndHQ() {
                 referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );
