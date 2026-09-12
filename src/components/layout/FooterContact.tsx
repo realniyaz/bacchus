@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -22,7 +23,7 @@ const SOCIAL_LINKS = [
     href: "https://instagram.com",
     icon: (
       <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.449-1.44z" />
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
       </svg>
     ),
   },
@@ -51,8 +52,6 @@ export default function FooterContact() {
   const leftColRef = useRef<HTMLDivElement>(null);
   const rightColRef = useRef<HTMLDivElement>(null);
   const lionWatermarkRef = useRef<HTMLDivElement>(null);
-
-  const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -94,7 +93,7 @@ export default function FooterContact() {
         );
       }
 
-      // 3. Reveal inquiry card
+      // 3. Reveal inquiry liaison card
       if (rightColRef.current) {
         gsap.fromTo(
           rightColRef.current,
@@ -117,14 +116,9 @@ export default function FooterContact() {
     return () => ctx.revert();
   }, []);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 5000);
-  };
-
   return (
-    <footer data-cursor-theme="light"
+    <footer
+      data-cursor-theme="light"
       ref={sectionRef}
       className="relative w-full bg-gradient-to-b from-[#FAF7F0] via-[#F3ECE0] to-[#E9DFCE] text-[#191713] overflow-hidden select-none"
     >
@@ -143,9 +137,8 @@ export default function FooterContact() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16 py-16 sm:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
-          
-          {/* LEFT: CORPORATE & EDITORIAL DETAILS (CENTERED ON MOBILE) */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+          {/* ================= LEFT: CORPORATE & EDITORIAL DETAILS (6 COLS) ================= */}
           <div
             ref={leftColRef}
             className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left"
@@ -162,7 +155,7 @@ export default function FooterContact() {
               </div>
               <span className="w-5 h-[1.5px] bg-[#8E7626]" />
               <p className="font-serif tracking-[0.28em] text-xs sm:text-sm text-[#8E7626] uppercase font-bold">
-                Bacchus World Spirits
+                Bacchus Distillery
               </p>
             </div>
 
@@ -180,7 +173,6 @@ export default function FooterContact() {
 
             {/* Corporate Dossier Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 w-full mb-8 text-center sm:text-left">
-              
               {/* Address Block */}
               <div className="p-4 rounded-xl bg-[#FAF7F0]/85 border border-[#8E7626]/20 flex flex-col items-center sm:items-start shadow-xs">
                 <span className="text-[10px] uppercase font-sans tracking-[0.22em] text-[#8E7626] font-bold mb-1.5 flex items-center justify-center sm:justify-start gap-1.5">
@@ -191,7 +183,7 @@ export default function FooterContact() {
                   Headquarters
                 </span>
                 <p className="text-xs text-[#2A2620] font-normal leading-relaxed">
-                  B 28 Manaar Tower, Noida - 132, <br />
+                  B 28, Sector 132, Noida, <br />
                   Uttar Pradesh - 201304, India
                 </p>
               </div>
@@ -224,10 +216,10 @@ export default function FooterContact() {
                   Trade Email
                 </span>
                 <a
-                  href="mailto:contact@bacchusdistillery.com"
-                  className="text-xs text-[#111] font-semibold hover:text-[#8E7626] transition-colors"
+                  href="mailto:contact@bacchusdistilleryindia.com"
+                  className="text-xs text-[#111] font-semibold hover:text-[#8E7626] transition-colors break-all"
                 >
-                  contact@bacchusdistillery.com
+                  contact@bacchusdistilleryindia.com
                 </a>
                 <span className="text-[10px] text-[#786E5D] font-sans mt-0.5">
                   Corporate &amp; Institutional Queries
@@ -246,7 +238,6 @@ export default function FooterContact() {
                   ISO 9001:2015 &bull; HACCP &bull; FSSAI Licensed
                 </p>
               </div>
-
             </div>
 
             {/* Social Media Linkage Pills */}
@@ -274,130 +265,67 @@ export default function FooterContact() {
                 ))}
               </div>
             </div>
-
           </div>
 
-          {/* RIGHT: ALLOCATION INQUIRY FORM */}
+          {/* ================= RIGHT: CONTACT LIAISON REDIRECTION CARD (6 COLS) ================= */}
           <div ref={rightColRef} className="lg:col-span-6 flex flex-col justify-center">
-            
-            <div className="relative w-full rounded-2xl p-6 sm:p-8 bg-[#FAF7F0]/90 border border-[#D4AF37]/45 shadow-[0_20px_50px_rgba(40,30,15,0.1)] backdrop-blur-md">
-              
-              <div className="flex items-center justify-between border-b border-[#8E7626]/20 pb-4 mb-6 text-left">
+            <div className="relative w-full rounded-2xl p-8 sm:p-10 lg:p-12 bg-[#FAF7F0]/95 border border-[#D4AF37]/50 shadow-[0_20px_50px_rgba(40,30,15,0.1)] backdrop-blur-md flex flex-col justify-between text-left">
+              {/* Top Meta Line */}
+              <div className="flex items-center justify-between border-b border-[#8E7626]/20 pb-4 mb-6">
                 <div>
-                  <h3 className="font-serif text-lg sm:text-xl text-[#111] font-bold tracking-wide">
+                  <span className="text-[10px] uppercase font-sans tracking-[0.24em] text-[#8E7626] font-bold block mb-1">
+                    Corporate Trade Desk
+                  </span>
+                  <h3 className="font-serif text-2xl sm:text-3xl text-[#111] font-bold tracking-tight">
                     Dispatch An Inquiry
                   </h3>
-                  <p className="text-[11px] text-[#6E6554] font-sans">
-                    Expect confidential advisory within 24 operational hours.
-                  </p>
                 </div>
-                <span className="px-2.5 py-1 rounded-full bg-[#8E7626]/10 text-[#8E7626] text-[9px] uppercase font-sans tracking-widest font-bold">
-                  B2B &bull; Trade
+                <span className="px-3 py-1 rounded-full bg-[#8E7626]/10 text-[#8E7626] text-[10px] uppercase font-sans tracking-widest font-bold">
+                  B2B &bull; Allocations
                 </span>
               </div>
 
-              {formSubmitted ? (
-                <div className="py-12 flex flex-col items-center text-center">
-                  <div className="w-12 h-12 rounded-full bg-[#8E7626]/15 border border-[#8E7626] flex items-center justify-center text-[#8E7626] mb-3">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h4 className="font-serif text-lg text-[#111] font-bold mb-1">
-                    Inquiry Received
-                  </h4>
-                  <p className="text-xs text-[#5D5545] max-w-xs font-light">
-                    Our international trade desk has logged your dossier. A regional director will respond promptly.
-                  </p>
+              {/* Context Copy */}
+              <p className="font-sans text-xs sm:text-sm text-[#4E473B] leading-relaxed font-light mb-6">
+                Whether you represent an international distributor seeking export corridor allocations, a retail network exploring private labelling, or an institutional partner, our international desk is prepared to assist.
+              </p>
+
+              {/* Highlights & Guarantees */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                <div className="flex items-center gap-2.5 p-3 rounded-lg bg-[#FAF7F0] border border-[#8E7626]/20">
+                  <div className="w-2 h-2 rounded-full bg-[#8E7626]" />
+                  <span className="text-[11px] font-sans font-medium text-[#2A2620]">
+                    24h Executive Response
+                  </span>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4 text-left">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] uppercase font-sans tracking-[0.18em] text-[#554E41] font-semibold">
-                        Full Name *
-                      </label>
-                      <input suppressHydrationWarning
-                        type="text"
-                        required
-                        placeholder="Your Name"
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF7F0] border border-[#8E7626]/30 text-xs text-[#111] placeholder:text-[#999080] focus:outline-none focus:border-[#8E7626] transition-colors"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] uppercase font-sans tracking-[0.18em] text-[#554E41] font-semibold">
-                        Corporate Email *
-                      </label>
-                      <input
-                        type="email"
-                        required
-                        placeholder="executive@domain.com"
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF7F0] border border-[#8E7626]/30 text-xs text-[#111] placeholder:text-[#999080] focus:outline-none focus:border-[#8E7626] transition-colors"
-                      />
-                    </div>
-                  </div>
+                <div className="flex items-center gap-2.5 p-3 rounded-lg bg-[#FAF7F0] border border-[#8E7626]/20">
+                  <div className="w-2 h-2 rounded-full bg-[#8E7626]" />
+                  <span className="text-[11px] font-sans font-medium text-[#2A2620]">
+                    Bespoke Export Dossiers
+                  </span>
+                </div>
+              </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] uppercase font-sans tracking-[0.18em] text-[#554E41] font-semibold">
-                        Contact Number
-                      </label>
-                      <input
-                        type="tel"
-                        placeholder="+91 / Country Code"
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF7F0] border border-[#8E7626]/30 text-xs text-[#111] placeholder:text-[#999080] focus:outline-none focus:border-[#8E7626] transition-colors"
-                      />
-                    </div>
-                    <div className="flex flex-col gap-1.5">
-                      <label className="text-[10px] uppercase font-sans tracking-[0.18em] text-[#554E41] font-semibold">
-                        Inquiry Nature
-                      </label>
-                      <select className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF7F0] border border-[#8E7626]/30 text-xs text-[#111] focus:outline-none focus:border-[#8E7626] transition-colors">
-                        <option>Global Distribution / Export</option>
-                        <option>Domestic Retail Partnership</option>
-                        <option>Talsons' Reserve Private Cask</option>
-                        <option>Brand Promotion &amp; Activation</option>
-                        <option>General Corporate Dispatch</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col gap-1.5">
-                    <label className="text-[10px] uppercase font-sans tracking-[0.18em] text-[#554E41] font-semibold">
-                      Dossier Specifications / Message *
-                    </label>
-                    <textarea
-                      rows={3}
-                      required
-                      placeholder="Outline target volume, port requirements, or distribution territory..."
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-[#FAF7F0] border border-[#8E7626]/30 text-xs text-[#111] placeholder:text-[#999080] focus:outline-none focus:border-[#8E7626] transition-colors resize-none"
-                    />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="group relative w-full mt-2 py-3.5 rounded-full bg-[#12110F] text-[#FAF7F0] font-sans font-semibold text-xs uppercase tracking-[0.22em] overflow-hidden transition-all duration-300 hover:bg-[#8E7626] shadow-md cursor-pointer text-center"
+              {/* Redirection CTA */}
+              <Link
+                href="/contact"
+                className="group relative w-full py-4 rounded-full bg-[#12110F] text-[#FAF7F0] font-sans font-semibold text-xs uppercase tracking-[0.22em] overflow-hidden transition-all duration-300 hover:bg-[#8E7626] shadow-md text-center flex items-center justify-center gap-2.5"
+              >
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  Proceed to Contact Portal
+                  <svg
+                    className="w-4 h-4 stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1.5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      Transmit Inquiry
-                      <svg
-                        className="w-3.5 h-3.5 stroke-[2.5] transition-transform duration-300 group-hover:translate-x-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </span>
-                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent ease-in-out" />
-                  </button>
-                </form>
-              )}
-
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </span>
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/25 to-transparent ease-in-out" />
+              </Link>
             </div>
-
           </div>
-
         </div>
       </div>
     </footer>

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { gsap } from "gsap";
@@ -13,7 +13,7 @@ const MENU_LINKS = [
   { name: "About Us", href: "/about" },
   { name: "Global Presence", href: "/international" },
   { name: "Business", href: "/business" },
-  { name: "Our Team", href: "/team" },
+  { name: "Management", href: "/team" },
   { name: "Invest", href: "/invest" },
 ];
 
@@ -31,7 +31,6 @@ const IMPORTANT_LINKS = [
   { name: "Invest", href: "/invest" },
   { name: "Press", href: "/media" },
   { name: "Brand Asset Bureau", href: "/brands" },
-  
 ];
 
 const SOCIAL_MEDIA = [
@@ -78,22 +77,29 @@ export default function Footer() {
   const brandColRef = useRef<HTMLDivElement>(null);
   const matrixRef = useRef<HTMLDivElement>(null);
   const bottomBarRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const ctx = gsap.context(() => {
       // 1. Brand identity fade & drift
       if (brandColRef.current) {
         gsap.fromTo(
           brandColRef.current,
-          { opacity: 0, y: 24 },
+          { opacity: 0, y: 20 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.9,
+            duration: 0.8,
             ease: "power3.out",
             scrollTrigger: {
               trigger: brandColRef.current,
-              start: "top 88%",
+              start: "top 90%",
             },
           }
         );
@@ -103,16 +109,16 @@ export default function Footer() {
       if (matrixRef.current) {
         gsap.fromTo(
           matrixRef.current.children,
-          { opacity: 0, y: 20 },
+          { opacity: 0, y: 16 },
           {
             opacity: 1,
             y: 0,
-            duration: 0.8,
-            stagger: 0.1,
+            duration: 0.7,
+            stagger: 0.08,
             ease: "power3.out",
             scrollTrigger: {
               trigger: matrixRef.current,
-              start: "top 88%",
+              start: "top 90%",
             },
           }
         );
@@ -125,11 +131,11 @@ export default function Footer() {
           { opacity: 0 },
           {
             opacity: 1,
-            duration: 0.8,
+            duration: 0.6,
             ease: "power2.out",
             scrollTrigger: {
               trigger: bottomBarRef.current,
-              start: "top 95%",
+              start: "top 98%",
             },
           }
         );
@@ -137,10 +143,18 @@ export default function Footer() {
     }, footerRef);
 
     return () => ctx.revert();
-  }, []);
+  }, [mounted]);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
-    <footer data-cursor-theme="dark"
+    <footer
+      data-cursor-theme="dark"
       ref={footerRef}
       className="relative w-full bg-[#050505] text-[#E9DFCE] border-t border-gold-royal/20 overflow-hidden select-none"
     >
@@ -150,7 +164,6 @@ export default function Footer() {
       {/* ================= PRIMARY FOOTER STAGE ================= */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-16 sm:pt-20 pb-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
-          
           {/* ================= LEFT: ICON & COMPANY OVERVIEW (4 COLS) ================= */}
           <div
             ref={brandColRef}
@@ -166,9 +179,9 @@ export default function Footer() {
                   className="object-contain"
                 />
               </div>
-              <div className="flex flex-col items-start text-left">
+              <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                 <span className="font-serif text-lg text-ivory tracking-[0.16em] uppercase font-bold leading-none">
-                  Bacchus
+                  Bacchus Distillery Limited
                 </span>
                 <span className="text-[9px] uppercase font-sans tracking-[0.28em] text-gold-royal mt-1 font-semibold">
                   World Spirits &bull; 1994
@@ -176,7 +189,7 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="font-sans text-xs text-champagne/80 leading-relaxed font-light max-w-sm mb-6">
+            <p className="font-sans text-xs text-champagne/80 leading-relaxed font-light max-w-sm mb-6 text-center lg:text-left">
               Pioneering private spirit distillation. From proprietary copper pot stills 
               to international cellaring, our houses craft benchmark malts and kinetic blends across 19+ countries.
             </p>
@@ -195,9 +208,9 @@ export default function Footer() {
             </div>
 
             {/* Head Office Location Snippet */}
-            <div className="text-[11px] text-stone font-sans leading-relaxed">
+            <div className="text-[11px] text-stone font-sans leading-relaxed text-center lg:text-left">
               <span className="text-ivory font-medium block mb-0.5">Global Bureau:</span>
-              B 28 Manaar Tower, Noida - 132, UP - 201304
+              B 28, Sector 132, Noida, UP - 201304
             </div>
           </div>
 
@@ -270,24 +283,24 @@ export default function Footer() {
               </span>
 
               {/* Helpline */}
-              <div className="flex flex-col mb-3">
+              <div className="flex flex-col mb-3 items-center sm:items-start">
                 <span className="text-[9px] uppercase font-sans tracking-widest text-stone">Direct Desk</span>
                 <a
                   href="tel:+911204664253"
-                  className="text-xs text-ivory hover:text-gold-bright transition-colors font-sans font-medium"
+                  className="text-xs text-ivory hover:text-gold-bright transition-colors font-sans font-medium mt-0.5"
                 >
                   +91 120 466 4253
                 </a>
               </div>
 
               {/* Email */}
-              <div className="flex flex-col mb-5">
+              <div className="flex flex-col mb-5 items-center sm:items-start">
                 <span className="text-[9px] uppercase font-sans tracking-widest text-stone">Trade Inquiries</span>
                 <a
-                  href="mailto:contact@bacchusdistillery.com"
-                  className="text-xs text-ivory hover:text-gold-bright transition-colors font-sans font-medium break-all"
+                  href="mailto:contact@bacchusdistilleryindia.com"
+                  className="text-xs text-ivory hover:text-gold-bright transition-colors font-sans font-medium break-all mt-0.5"
                 >
-                  contact@bacchusdistillery.com
+                  contact@bacchusdistilleryindia.com
                 </a>
               </div>
 
@@ -310,12 +323,10 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-
           </div>
-
         </div>
 
-        {/* ================= BOTTOM BAR: COPYRIGHT & POLICIES ================= */}
+        {/* ================= BOTTOM BAR: COPYRIGHT, POLICIES & BACK TO TOP ================= */}
         <div
           ref={bottomBarRef}
           className="mt-14 pt-8 border-t border-gold-royal/20 flex flex-col md:flex-row items-center justify-between gap-5 text-center md:text-left"
@@ -323,7 +334,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row items-center gap-2">
             <span className="font-serif text-xs text-ivory font-bold uppercase tracking-wider">
-              &copy; {new Date().getFullYear()} Bacchus World Spirits Limited.
+              &copy; {mounted ? new Date().getFullYear() : 2026} Bacchus Distillery Limited.
             </span>
             <span className="hidden sm:inline text-gold-royal/40">&bull;</span>
             <span className="text-[11px] text-stone font-sans">
@@ -349,6 +360,25 @@ export default function Footer() {
               Sitemap
             </Link>
           </div>
+
+          {/* Back to Top Button (Visible & Clickable on Desktop & Mobile) */}
+          <button
+            onClick={scrollToTop}
+            aria-label="Back to Top"
+            className="group flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-gold-royal/30 bg-surface-1/80 hover:bg-gold-royal/10 hover:border-gold-royal transition-all duration-300 text-champagne hover:text-gold-bright cursor-pointer"
+          >
+            <span className="text-[10px] uppercase font-sans tracking-widest font-semibold">Top</span>
+            <div className="w-5 h-5 rounded-full bg-gold-royal/20 flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-0.5">
+              <svg
+                className="w-3 h-3 stroke-current text-gold-bright"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.5}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+              </svg>
+            </div>
+          </button>
         </div>
 
         {/* Legal Age Advisory Notice */}
@@ -357,7 +387,6 @@ export default function Footer() {
             Strict Adherence to Legal Drinking Age Laws &bull; Please Drink Responsibly
           </p>
         </div>
-
       </div>
     </footer>
   );

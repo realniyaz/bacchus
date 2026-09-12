@@ -11,7 +11,7 @@ const NAV_LINKS = [
   { label: "Brands", href: "/brands" },
   { label: "International Presence", href: "/international" },
   { label: "Business", href: "/business" },
-  { label: "Team", href: "/team" },
+  { label: "Management", href: "/team" },
   { label: "Invest", href: "/invest" },
   { label: "Contact", href: "/contact" },
 ];

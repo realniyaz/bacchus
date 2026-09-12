@@ -168,11 +168,11 @@ export default function DistilleryOrigin() {
               </div>
 
               {/* Floating Origin Seal */}
-              <div className="absolute top-4 right-4 sm:top-6 sm:right-6 px-3.5 py-1.5 rounded-full bg-[#FAF7F0]/90 border border-[#8E7626]/30 backdrop-blur-md shadow-sm">
+              {/* <div className="absolute top-4 right-4 sm:top-6 sm:right-6 px-3.5 py-1.5 rounded-full bg-[#FAF7F0]/90 border border-[#8E7626]/30 backdrop-blur-md shadow-sm">
                 <span className="font-serif text-[10px] text-[#8E7626] uppercase tracking-[0.2em] font-bold">
                   Punjab Facility &bull; Est. 1994
                 </span>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -213,10 +213,10 @@ export default function DistilleryOrigin() {
             {/* Router Action */}
             <div className="flex items-center">
               <Link
-                href="/the-vault"
+                href="/brands"
                 className="group inline-flex items-center gap-2.5 text-xs font-sans uppercase tracking-[0.22em] text-[#14120E] font-bold hover:text-[#8E7626] transition-colors"
               >
-                <span>Explore The Spirits Vault</span>
+                <span>Explore The Brand Vault</span>
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"

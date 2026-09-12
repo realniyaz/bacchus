@@ -29,7 +29,7 @@ const PRODUCTS: ProductItem[] = [
     badge: "75° PROOF",
     proof: "42.8% V/V • 750 ML",
     image: "/talson/creatives/productshot.png",
-    link: "/kinetic-editions#crazy-boxer",
+    link: "/brands",
   },
   {
     id: "jackies-crown",
@@ -39,7 +39,7 @@ const PRODUCTS: ProductItem[] = [
     badge: "AGED 12 YEARS",
     proof: "42.8% V/V • 75° PROOF",
     image: "/jackie crown/product-shot.png",
-    link: "/the-vault",
+    link: "/brands",
   },
   {
     id: "crazy-boxer",
@@ -49,7 +49,7 @@ const PRODUCTS: ProductItem[] = [
     badge: "COPPER DISTILLED",
     proof: "SPECIAL EDITION",
     image: "/crazy-boxer/product-shot.png",
-    link: "/the-vault#craft",
+    link: "/brands",
   },
   {
     id: "rozzita",
@@ -59,7 +59,7 @@ const PRODUCTS: ProductItem[] = [
     badge: "HALLMARK",
     proof: "HAND FINISHED",
     image: "/rozzita/product-shot.png",
-    link: "/the-vault#details",
+    link: "/brands",
   },
   {
     id: "rum",
@@ -69,7 +69,7 @@ const PRODUCTS: ProductItem[] = [
     badge: "CELLAR SERVE",
     proof: "RARE RESERVE",
     image: "/rum/product-shot.png",
-    link: "/the-vault#the-pour",
+    link: "/brands",
   },
 ];
 
