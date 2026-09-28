@@ -105,7 +105,7 @@ export default function Navbar() {
             <div className="relative w-9 h-9 sm:w-10 sm:h-10 transition-transform duration-500 group-hover:scale-105">
               <Image
                 src="/icon.png"
-                alt="Bacchus Crowned Lion"
+                alt="Origin Crowned Lion"
                 fill
                 priority
                 className="object-contain drop-shadow-[0_0_12px_rgba(212,175,55,0.4)]"
@@ -113,7 +113,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-lg sm:text-xl tracking-[0.2em] text-ivory leading-none group-hover:text-gold-bright transition-colors">
-                BACCHUS
+                Origin
               </span>
               <span className="text-[9px] uppercase tracking-[0.38em] text-gold-royal font-sans font-medium mt-1">
                 Distillery
@@ -271,7 +271,7 @@ export default function Navbar() {
             </div>
           </div>
           <p className="text-[9px] uppercase tracking-[0.25em] text-stone text-center">
-            Bacchus Distillery • Established 1994
+            Origin Distillery • Established 1994
           </p>
         </div>
       </div>

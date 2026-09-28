@@ -174,14 +174,14 @@ export default function Footer() {
               <div className="relative w-9 h-9 flex-shrink-0 drop-shadow-[0_0_10px_rgba(212,175,55,0.6)] transition-transform duration-300 group-hover:scale-105">
                 <Image
                   src="/icon.png"
-                  alt="Bacchus Crowned Lion Emblem"
+                  alt="Origin Crowned Lion Emblem"
                   fill
                   className="object-contain"
                 />
               </div>
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                 <span className="font-serif text-lg text-ivory tracking-[0.16em] uppercase font-bold leading-none">
-                  Bacchus Distillery Limited
+                  Origin Distillery Limited
                 </span>
                 <span className="text-[9px] uppercase font-sans tracking-[0.28em] text-gold-royal mt-1 font-semibold">
                   World Spirits &bull; 1994
@@ -297,10 +297,10 @@ export default function Footer() {
               <div className="flex flex-col mb-5 items-center sm:items-start">
                 <span className="text-[9px] uppercase font-sans tracking-widest text-stone">Trade Inquiries</span>
                 <a
-                  href="mailto:contact@bacchusdistilleryindia.com"
+                  href="mailto:contact@Origindistilleryindia.com"
                   className="text-xs text-ivory hover:text-gold-bright transition-colors font-sans font-medium break-all mt-0.5"
                 >
-                  contact@bacchusdistilleryindia.com
+                  contact@Origindistilleryindia.com
                 </a>
               </div>
 
@@ -334,7 +334,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row items-center gap-2">
             <span className="font-serif text-xs text-ivory font-bold uppercase tracking-wider">
-              &copy; {mounted ? new Date().getFullYear() : 2026} Bacchus Distillery Limited.
+              &copy; {mounted ? new Date().getFullYear() : 2026} Origin Distillery Limited.
             </span>
             <span className="hidden sm:inline text-gold-royal/40">&bull;</span>
             <span className="text-[11px] text-stone font-sans">
