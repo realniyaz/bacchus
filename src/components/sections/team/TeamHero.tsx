@@ -99,7 +99,7 @@ export default function TeamHero() {
       >
         <Image
           src="/icon.png"
-          alt="Bacchus Royal Lion Watermark"
+          alt="Origin Royal Lion Watermark"
           fill
           priority
           className="object-contain filter grayscale contrast-125 brightness-150"
@@ -112,7 +112,7 @@ export default function TeamHero() {
         <div ref={eyebrowRef} className="flex items-center gap-3 mb-5">
           <span className="w-6 sm:w-10 h-[1px] bg-gradient-to-r from-transparent via-[#D4AF37] to-[#D4AF37]/50" />
           <p className="font-serif tracking-[0.28em] text-[10px] sm:text-xs text-[#D4AF37] uppercase font-semibold">
-            Bacchus World Spirits &bull; Custodians of Legacy
+            Origin World Spirits &bull; Custodians of Legacy
           </p>
           <span className="w-6 sm:w-10 h-[1px] bg-gradient-to-l from-transparent via-[#D4AF37] to-[#D4AF37]/50" />
         </div>

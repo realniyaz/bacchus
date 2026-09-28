@@ -197,7 +197,7 @@ export default function GlobalPresenceHero() {
         <div ref={lionImageRef} className="relative w-full h-full">
           <Image
             src="/icon.png"
-            alt="Bacchus Royal Lion Crest"
+            alt="Origin Royal Lion Crest"
             fill
             priority
             className="object-contain"

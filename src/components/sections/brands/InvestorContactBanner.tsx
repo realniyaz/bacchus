@@ -76,7 +76,7 @@ export default function InvestorContactBanner() {
           </div>
 
           <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl text-[#12110F] tracking-wide leading-tight mb-2">
-            Partner With <span className="italic font-light text-[#8E7626]">Bacchus.</span>
+            Partner With <span className="italic font-light text-[#8E7626]">Origin.</span>
           </h2>
 
           <p className="font-sans text-xs sm:text-sm text-[#575043] max-w-md font-light">
@@ -150,7 +150,7 @@ export default function InvestorContactBanner() {
         {/* ================= 3. ONE-LINE COMPACT FOOTER STRIP ================= */}
         <div className="mt-8 pt-4 border-t border-[#8E7626]/20 flex flex-col sm:flex-row items-center justify-between gap-2 text-center text-[10px] text-[#6E6554] font-sans">
           <span>Noida - 132, UP &bull; +91 120 466 425</span>
-          <span className="text-[#8E7626] font-medium">contact@bacchusdistilleryindia.com</span>
+          <span className="text-[#8E7626] font-medium">contact@origindistillery.in</span>
         </div>
 
       </div>

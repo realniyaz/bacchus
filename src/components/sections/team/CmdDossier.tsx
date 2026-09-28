@@ -107,7 +107,7 @@ export default function CmdDossier() {
           <div className="absolute -right-8 -bottom-8 w-48 sm:w-64 aspect-square pointer-events-none opacity-[0.04] z-0">
             <Image
               src="/icon.png"
-              alt="Bacchus Crest Watermark"
+              alt="Origin Crest Watermark"
               fill
               className="object-contain filter grayscale"
             />
@@ -179,7 +179,7 @@ export default function CmdDossier() {
 
               {/* Concise Narrative */}
               <p className="font-sans text-xs sm:text-[13px] text-[#575043] font-light leading-relaxed max-w-lg mb-5">
-                Guiding the global expansion of Bacchus Distillery across 19+ nations compliance across MRC, ISO 9001:2015, and FSSAI standards.
+                Guiding the global expansion of Origin Distillery across 19+ nations compliance across MRC, ISO 9001:2015, and FSSAI standards.
               </p>
 
               {/* Two-Column Telemetry */}

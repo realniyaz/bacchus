@@ -27,7 +27,7 @@ const COMMERCIAL_MODELS: CommercialModel[] = [
     num: "01",
     tag: "IMPORT & WHOLESALE",
     title: "Global Brand Distribution",
-    lead: "Distribute Bacchus flagship labels with complete marketing collateral and trade activation support.",
+    lead: "Distribute Origin flagship labels with complete marketing collateral and trade activation support.",
     description:
       "Direct access to our commercially proven brand portfolio including Talsons 12 Single Malt, Jackie’s Crown Blended Whisky, Crazy Boxer XXX Rum, and Rozzita Vodka. Backed by end-to-end POS displays, tasting event kits, and regional marketing allocations.",
     deliverables: [
@@ -67,7 +67,7 @@ const COMMERCIAL_MODELS: CommercialModel[] = [
     title: "Statewise Brand Ownership",
     lead: "Exclusive territorial manufacturing, bottling, and distribution rights for Indian states.",
     description:
-      "A rare opportunity for domestic beverage consortiums and regional distillers to secure state-level manufacturing licenses and exclusivity for established, high-growth Bacchus trademarks with local brand equity.",
+      "A rare opportunity for domestic beverage consortiums and regional distillers to secure state-level manufacturing licenses and exclusivity for established, high-growth Origin trademarks with local brand equity.",
     deliverables: [
       "Exclusive Territorial Production Rights",
       "State Excise & Compliance Blueprint",
@@ -139,7 +139,7 @@ export default function CommercialPillars() {
     >
       {/* Editorial Watermark Logo */}
       <div className="absolute right-[-4%] top-1/4 text-[16vw] font-serif font-bold text-[#D4AF37]/[0.06] leading-none pointer-events-none tracking-tight select-none">
-        BACCHUS
+        Origin
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 lg:px-16">

@@ -135,7 +135,7 @@ export default function GlobalPresence() {
           </h2>
 
           <p className="font-sans text-xs sm:text-sm md:text-base text-champagne/90 leading-relaxed max-w-2xl font-light">
-            Bacchus Distellery has been expanding and perfecting our business for decades, 
+            Origin Distellery has been expanding and perfecting our business for decades, 
             and we’ve been rewarded with an enormous reach. We now distribute our world-class 
             liquors and spirits to customers all over the world. Through targeted promotional campaigns 
             and global distribution, we&apos;ve reached over 19 countries. We know that every single customer 

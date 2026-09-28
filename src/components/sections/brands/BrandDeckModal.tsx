@@ -309,7 +309,7 @@ export default function BrandDeckModal() {
 
             {/* Footer */}
             <div className="px-5 sm:px-7 py-2.5 bg-[#0E0D0B] border-t border-white/10 flex items-center justify-between text-[9px] text-[#C3BDAF] font-sans">
-              <span>Bacchus Distellery &bull; Cask Archive</span>
+              <span>Origin Distellery &bull; Cask Archive</span>
               <button
                 onClick={handleClose}
                 className="underline hover:text-white cursor-pointer"

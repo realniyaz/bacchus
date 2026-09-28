@@ -153,10 +153,10 @@ export default function ContactLedgerAndHQ() {
                   Executive Desk
                 </span>
                 <a
-                  href="mailto:md@bacchusspiritsglobal.com"
+                  href="mailto:md@Originspiritsglobal.com"
                   className="font-serif text-sm sm:text-base font-bold text-[#14120E] hover:text-[#8E7626] transition-colors"
                 >
-                  md@bacchusdistilleryindia.com
+                  md@Origindistilleryindia.com
                 </a>
               </div>
 
@@ -166,10 +166,10 @@ export default function ContactLedgerAndHQ() {
                   Corporate &amp; Trade Inquiries
                 </span>
                 <a
-                  href="mailto:contact@bacchusdistillery.com"
+                  href="mailto:contact@Origindistillery.com"
                   className="font-serif text-sm sm:text-base font-bold text-[#14120E] hover:text-[#8E7626] transition-colors"
                 >
-                  contact@bacchusdistilleryindia.com
+                  contact@Origindistilleryindia.com
                 </a>
               </div>
 
@@ -423,7 +423,7 @@ export default function ContactLedgerAndHQ() {
             {/* Embedded Location Map Stage */}
             <div className="lg:col-span-7 h-[280px] sm:h-[350px] w-full rounded-2xl overflow-hidden border border-[#8E7626]/20 relative shadow-inner bg-[#FAF7F2]">
               <iframe
-                title="Bacchus Spirits Noida HQ"
+                title="Origin Spirits Noida HQ"
                 src="https://maps.google.com/maps?q=B+28+Manaar+Tower+Sector+132+Noida+Uttar+Pradesh+201304&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0 filter grayscale-[20%] contrast-[1.05]"
                 loading="lazy"

@@ -90,7 +90,7 @@ export default function AboutHero() {
       >
         <Image
           src="/assets/about-banner.png"
-          alt="House of Bacchus heritage lounge and distillation mastery"
+          alt="House of Origin heritage lounge and distillation mastery"
           fill
           priority
           sizes="100vw"
@@ -123,7 +123,7 @@ export default function AboutHero() {
           <div ref={eyebrowRef} className="flex items-center gap-2.5 mb-4">
             <span className="w-6 h-[1px] bg-gold-royal/50" />
             <p className="font-serif tracking-[0.28em] text-[10px] sm:text-xs text-gold-royal uppercase font-semibold">
-              BACCHUS DISTELLERY &bull; EST. 1994
+              ORIGIN DISTELLERY &bull; EST. 1994
             </p>
             <span className="w-6 h-[1px] bg-gold-royal/50" />
           </div>

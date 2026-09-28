@@ -157,7 +157,7 @@ export default function ProductGallery() {
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[500px] aspect-square pointer-events-none opacity-[0.035] z-0">
         <Image
           src="/icon.png"
-          alt="Bacchus Lion Watermark"
+          alt="Origin Lion Watermark"
           fill
           className="object-contain"
         />
@@ -171,7 +171,7 @@ export default function ProductGallery() {
             <div className="relative w-6 h-6 flex-shrink-0 drop-shadow-[0_0_6px_rgba(212,175,55,0.4)]">
               <Image
                 src="/icon.png"
-                alt="Bacchus Crest"
+                alt="Origin Crest"
                 fill
                 className="object-contain"
               />

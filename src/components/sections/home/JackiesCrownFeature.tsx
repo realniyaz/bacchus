@@ -129,7 +129,7 @@ export default function JackiesCrownFeature() {
               <div className="relative w-6 h-6 flex-shrink-0 drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]">
                 <Image
                   src="/icon.png"
-                  alt="Bacchus Crest"
+                  alt="Origin Crest"
                   fill
                   className="object-contain"
                 />

@@ -148,7 +148,7 @@ export default function InvestHero() {
       >
         <Image
           src="/assets/b5.png"
-          alt="Bacchus Distillery Cellar and Talsons' Reserve 12 Years"
+          alt="Origin Distillery Cellar and Talsons' Reserve 12 Years"
           fill
           priority
           sizes="100vw"
@@ -182,7 +182,7 @@ export default function InvestHero() {
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#12110F]/85 border border-[#D4AF37]/30 backdrop-blur-md mb-4 sm:mb-5 shadow-[0_0_20px_rgba(212,175,55,0.12)]">
               <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
               <span className="font-sans text-[10px] sm:text-[11px] font-semibold tracking-[0.22em] text-[#F3D36A] uppercase">
-                BACCHUS DISTILLERY &bull; INSTITUTIONAL INVESTOR PORTAL
+                Origin DISTILLERY &bull; INSTITUTIONAL INVESTOR PORTAL
               </span>
             </div>
 

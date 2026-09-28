@@ -125,7 +125,7 @@ export default function HeritageOverview() {
       >
         <Image
           src="/icon.png"
-          alt="Bacchus Royal Lion Watermark"
+          alt="Origin Royal Lion Watermark"
           fill
           priority
           className="object-contain filter drop-shadow-[0_8px_25px_rgba(212,175,55,0.35)]"
@@ -140,7 +140,7 @@ export default function HeritageOverview() {
             <div className="relative w-6 h-6 flex-shrink-0 drop-shadow-[0_0_6px_rgba(212,175,55,0.4)]">
               <Image
                 src="/icon.png"
-                alt="Bacchus Crest"
+                alt="Origin Crest"
                 fill
                 className="object-contain"
               />
@@ -170,7 +170,7 @@ export default function HeritageOverview() {
 
             <p className="font-sans text-xs sm:text-sm text-[#3D372E] leading-relaxed mb-5 max-w-lg font-normal">
               One of India’s pioneering private spirit houses. From proprietary copper pot distillation 
-              to international cellaring, Bacchus delivers consistent craftsmanship across 16+ countries.
+              to international cellaring, Origin delivers consistent craftsmanship across 16+ countries.
             </p>
 
             {/* Quick Action Badges */}

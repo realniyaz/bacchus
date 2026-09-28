@@ -94,7 +94,7 @@ export default function HeroCinematic() {
       >
         <Image
           src="/assets/banner.png"
-          alt="Bacchus Distillery Flagship Collection"
+          alt="Origin Distillery Flagship Collection"
           fill
           priority
           quality={95}
@@ -112,7 +112,7 @@ export default function HeroCinematic() {
       >
         <Image
           src="/assets/mob-banner.png"
-          alt="Bacchus Distillery Collection — Mobile View"
+          alt="Origin Distillery Collection — Mobile View"
           fill
           priority
           quality={95}
@@ -140,7 +140,7 @@ export default function HeroCinematic() {
             <div className="flex items-center gap-3 mb-5">
               <span className="w-6 sm:w-10 h-[1px] bg-gradient-to-r from-transparent via-gold-royal to-gold-royal/40" />
               <p className="font-serif tracking-[0.28em] text-[11px] sm:text-xs text-gold-royal font-medium uppercase">
-                Bacchus Distellery &bull; Since 1994
+                Origin Distellery &bull; Since 1994
               </p>
               <span className="w-6 sm:w-10 h-[1px] bg-gradient-to-l from-transparent via-gold-royal to-gold-royal/40" />
             </div>
