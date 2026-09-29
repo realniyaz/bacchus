@@ -44,7 +44,7 @@ export default function AgeGate() {
         </div>
 
         <p className="text-[10px] uppercase tracking-[0.35em] text-[#D4AF37] font-sans font-semibold mb-2">
-          Bacchus Distillery • Est. {SITE_CONFIG.establishedYear}
+          Origin Distillery • Est. {SITE_CONFIG.establishedYear}
         </p>
 
         {!denied ? (

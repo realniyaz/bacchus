@@ -129,7 +129,7 @@ export default function FooterContact() {
       >
         <Image
           src="/icon.png"
-          alt="Bacchus Crest Watermark"
+          alt="Origin Crest Watermark"
           fill
           priority
           className="object-contain filter drop-shadow-[0_10px_30px_rgba(212,175,55,0.4)]"
@@ -148,14 +148,14 @@ export default function FooterContact() {
               <div className="relative w-7 h-7 sm:w-8 sm:h-8 flex-shrink-0 drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]">
                 <Image
                   src="/icon.png"
-                  alt="Bacchus Crest"
+                  alt="Origin Crest"
                   fill
                   className="object-contain"
                 />
               </div>
               <span className="w-5 h-[1.5px] bg-[#8E7626]" />
               <p className="font-serif tracking-[0.28em] text-xs sm:text-sm text-[#8E7626] uppercase font-bold">
-                Bacchus Distillery
+                Origin Distillery
               </p>
             </div>
 
@@ -216,10 +216,10 @@ export default function FooterContact() {
                   Trade Email
                 </span>
                 <a
-                  href="mailto:contact@bacchusdistilleryindia.com"
+                  href="mailto:contact@Origindistilleryindia.com"
                   className="text-xs text-[#111] font-semibold hover:text-[#8E7626] transition-colors break-all"
                 >
-                  contact@bacchusdistilleryindia.com
+                  contact@Origindistilleryindia.com
                 </a>
                 <span className="text-[10px] text-[#786E5D] font-sans mt-0.5">
                   Corporate &amp; Institutional Queries
