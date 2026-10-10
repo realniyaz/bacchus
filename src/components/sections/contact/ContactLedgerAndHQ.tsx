@@ -378,13 +378,13 @@ export default function ContactLedgerAndHQ() {
               </div>
 
               <h3 className="font-serif text-2xl sm:text-3xl text-[#14120E] font-bold mb-3">
-                Noida Bureau
+                Hambran Industrial Area 
               </h3>
 
               <div className="font-sans text-xs sm:text-sm text-[#524E45] leading-relaxed mb-6 space-y-1">
                 <p className="font-semibold text-[#14120E]">B 28 Manaar Tower</p>
-                <p>Sector 132, Noida</p>
-                <p>Uttar Pradesh &mdash; 201304, India</p>
+                <p>Ludhiana</p>
+                <p>Punjab &mdash;  141110, India</p>
               </div>
 
               {/* Transit & Access Notes */}
@@ -401,7 +401,7 @@ export default function ContactLedgerAndHQ() {
 
               {/* External Map Action */}
               <a
-                href="https://maps.google.com/?q=B+28+Manaar+Tower+Sector+132+Noida+Uttar+Pradesh+201304"
+                href="https://maps.google.com/?q=Hambran+Industrial+Area+Ludhiana+Punjab+141110"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#FAF7F2] border border-[#8E7626]/35 text-[#14120E] font-sans text-xs font-bold uppercase tracking-[0.16em] hover:bg-[#8E7626] hover:text-[#FFFFFF] transition-all duration-300 shadow-xs"
@@ -424,7 +424,7 @@ export default function ContactLedgerAndHQ() {
             <div className="lg:col-span-7 h-[280px] sm:h-[350px] w-full rounded-2xl overflow-hidden border border-[#8E7626]/20 relative shadow-inner bg-[#FAF7F2]">
               <iframe
                 title="Origin Spirits Noida HQ"
-                src="https://maps.google.com/maps?q=B+28+Manaar+Tower+Sector+132+Noida+Uttar+Pradesh+201304&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                src="https://maps.google.com/maps?q=Hambran+Industrial+Area+Ludhiana+Punjab+141110&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0 filter grayscale-[20%] contrast-[1.05]"
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

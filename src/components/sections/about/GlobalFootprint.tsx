@@ -25,9 +25,9 @@ const HUBS: MapHub[] = [
     flag: "🇮🇳",
     lat: 31.1471,
     lng: 75.3412,
-    territory: "Distillery Origin & Master Cellars",
+    territory: "Distillery Bacchus & Master Cellars",
     scope: "Copper pot distillation, double-wood maturation, and master vatting.",
-    badge: "FSSAI & Origin HQ",
+    badge: "FSSAI & Bacchus HQ",
   },
   {
     id: "scotland",

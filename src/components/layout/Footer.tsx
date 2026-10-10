@@ -210,7 +210,7 @@ export default function Footer() {
             {/* Head Office Location Snippet */}
             <div className="text-[11px] text-stone font-sans leading-relaxed text-center lg:text-left">
               <span className="text-ivory font-medium block mb-0.5">Global Bureau:</span>
-              B 28, Sector 132, Noida, UP - 201304
+              Hambran Industrial Area, Ludhiana, Punjab 141110
             </div>
           </div>
 
