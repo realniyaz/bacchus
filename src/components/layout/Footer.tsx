@@ -297,10 +297,10 @@ export default function Footer() {
               <div className="flex flex-col mb-5 items-center sm:items-start">
                 <span className="text-[9px] uppercase font-sans tracking-widest text-stone">Trade Inquiries</span>
                 <a
-                  href="mailto:contact@origindistillery.in"
+                  href="mailto:contact@bacchusdistilleryindia.com"
                   className="text-xs text-ivory hover:text-gold-bright transition-colors font-sans font-medium break-all mt-0.5"
                 >
-                  contact@origindistillery.in
+                  contact@bacchusdistilleryindia.com
                 </a>
               </div>
 
