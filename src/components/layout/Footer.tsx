@@ -181,7 +181,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                 <span className="font-serif text-lg text-ivory tracking-[0.16em] uppercase font-bold leading-none">
-                  Origin Distillery Limited
+                Royal  Origin Distillery Limited
                 </span>
                 <span className="text-[9px] uppercase font-sans tracking-[0.28em] text-gold-royal mt-1 font-semibold">
                   World Spirits &bull; 1994
@@ -297,10 +297,10 @@ export default function Footer() {
               <div className="flex flex-col mb-5 items-center sm:items-start">
                 <span className="text-[9px] uppercase font-sans tracking-widest text-stone">Trade Inquiries</span>
                 <a
-                  href="mailto:contact@origindistilleryindia.com"
+                  href="mailto:contact@origindistillery.in"
                   className="text-xs text-ivory hover:text-gold-bright transition-colors font-sans font-medium break-all mt-0.5"
                 >
-                  contact@origindistilleryindia.com
+                  contact@origindistillery.in
                 </a>
               </div>
 

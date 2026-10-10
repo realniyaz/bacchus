@@ -153,10 +153,10 @@ export default function ContactLedgerAndHQ() {
                   Executive Desk
                 </span>
                 <a
-                  href="mailto:md@Originspiritsglobal.com"
+                  href="mailto:md@origindistillery.in"
                   className="font-serif text-sm sm:text-base font-bold text-[#14120E] hover:text-[#8E7626] transition-colors"
                 >
-                  md@Origindistilleryindia.com
+                  md@origindistillery.in
                 </a>
               </div>
 
@@ -169,7 +169,7 @@ export default function ContactLedgerAndHQ() {
                   href="mailto:contact@Origindistillery.com"
                   className="font-serif text-sm sm:text-base font-bold text-[#14120E] hover:text-[#8E7626] transition-colors"
                 >
-                  contact@Origindistilleryindia.com
+                  contact@origindistillery.in
                 </a>
               </div>
 

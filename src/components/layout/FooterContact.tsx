@@ -155,7 +155,7 @@ export default function FooterContact() {
               </div>
               <span className="w-5 h-[1.5px] bg-[#8E7626]" />
               <p className="font-serif tracking-[0.28em] text-xs sm:text-sm text-[#8E7626] uppercase font-bold">
-                Origin Distillery
+               Royal Origin Distillery
               </p>
             </div>
 
@@ -216,10 +216,10 @@ export default function FooterContact() {
                   Trade Email
                 </span>
                 <a
-                  href="mailto:contact@Origindistilleryindia.com"
+                  href="mailto:contact@origindistillery.in"
                   className="text-xs text-[#111] font-semibold hover:text-[#8E7626] transition-colors break-all"
                 >
-                  contact@Origindistilleryindia.com
+                  contact@origindistillery.in
                 </a>
                 <span className="text-[10px] text-[#786E5D] font-sans mt-0.5">
                   Corporate &amp; Institutional Queries

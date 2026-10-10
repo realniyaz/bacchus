@@ -113,7 +113,7 @@ export default function Navbar() {
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-lg sm:text-xl tracking-[0.2em] text-ivory leading-none group-hover:text-gold-bright transition-colors">
-                Origin
+              Royal  Origin
               </span>
               <span className="text-[9px] uppercase tracking-[0.38em] text-gold-royal font-sans font-medium mt-1">
                 Distillery
