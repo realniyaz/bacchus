@@ -334,7 +334,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row items-center gap-2">
             <span className="font-serif text-xs text-ivory font-bold uppercase tracking-wider">
-              &copy; {mounted ? new Date().getFullYear() : 2026} Origin Distillery Limited.
+              &copy; {mounted ? new Date().getFullYear() : 2026} Bacchus Distillery.
             </span>
             <span className="hidden sm:inline text-gold-royal/40">&bull;</span>
             <span className="text-[11px] text-stone font-sans">
