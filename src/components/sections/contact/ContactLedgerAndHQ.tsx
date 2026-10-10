@@ -382,7 +382,7 @@ export default function ContactLedgerAndHQ() {
               </h3>
 
               <div className="font-sans text-xs sm:text-sm text-[#524E45] leading-relaxed mb-6 space-y-1">
-                <p className="font-semibold text-[#14120E]">B 28 Manaar Tower</p>
+                <p className="font-semibold text-[#14120E]"></p>
                 <p>Ludhiana</p>
                 <p>Punjab &mdash;  141110, India</p>
               </div>
