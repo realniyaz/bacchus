@@ -77,7 +77,7 @@ const COMMERCIAL_MODELS: CommercialTrack[] = [
       {
         metric: "HMRC & FDA",
         label: "Compliance Track",
-        detail: "Standardized Certificate of Origin, MSDS, and pre-cleared NAFDAC paperwork.",
+        detail: "Standardized Certificate of Bacchus, MSDS, and pre-cleared NAFDAC paperwork.",
       },
       {
         metric: "Launch Kit",

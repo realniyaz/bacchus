@@ -84,10 +84,10 @@ export default function PartnerConciergeCTA() {
                   <span className="font-bold text-[#8E7626]">Direct Executive Desk:</span>
                 </div>
                 <a
-                  href="mailto:contact@origindistillery.in"
+                  href="mailto:contact@bacchusdistilleryindia.com"
                   className="hover:text-[#8E7626] underline transition-colors break-all"
                 >
-                  contact@origindistillery.in
+                  contact@bacchusdistilleryindia.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-[11px] font-sans text-[#77736A]">

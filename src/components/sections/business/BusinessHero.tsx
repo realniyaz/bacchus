@@ -100,7 +100,7 @@ export default function BusinessHero() {
       >
         <Image
           src="/assets/banner3.png"
-          alt="Origin Distillery Facility"
+          alt="Bacchus Distillery Facility"
           fill
           priority
           sizes="100vw"
@@ -118,7 +118,7 @@ export default function BusinessHero() {
       >
         <Image
           src="/assets/banner4.png"
-          alt="Origin Distellery Commercial Collection"
+          alt="Bacchus Distellery Commercial Collection"
           fill
           priority
           sizes="100vw"

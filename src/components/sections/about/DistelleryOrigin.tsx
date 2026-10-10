@@ -121,12 +121,12 @@ export default function DistilleryOrigin() {
           <div className="flex items-center gap-3 mb-3">
             <span className="w-8 h-[1px] bg-gradient-to-r from-transparent to-[#8E7626]" />
             <p className="font-serif tracking-[0.3em] text-xs text-[#8E7626] uppercase font-bold">
-              ORIGIN &bull; THE DISTILLERY
+              BACCHUS &bull; THE DISTILLERY
             </p>
             <span className="w-8 h-[1px] bg-gradient-to-l from-transparent to-[#8E7626]" />
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#14120E] tracking-wide text-center lg:text-left leading-tight">
-            The Soul of Origin &mdash; <br className="hidden sm:inline" />
+            The Soul of Bacchus &mdash; <br className="hidden sm:inline" />
             <span className="italic font-light text-[#8E7626]">
               Punjab, India.
             </span>
@@ -186,7 +186,7 @@ export default function DistilleryOrigin() {
             </div>
 
             <p className="font-sans text-sm sm:text-base text-[#4A4337] leading-relaxed mb-4 font-normal">
-              In the vibrant heart of Punjab stands the soul of Origin Distillery &mdash; a facility where 
+              In the vibrant heart of Punjab stands the soul of Bacchus Distillery &mdash; a facility where 
               craftsmanship meets legacy. Here, copper stills whisper stories of tradition, and every barrel 
               reflects decades of distillation mastery.
             </p>
@@ -206,7 +206,7 @@ export default function DistilleryOrigin() {
                 &ldquo;We don&apos;t just make spirits &mdash; we craft experiences, tailored for every palate and poured with distinction.&rdquo;
               </p>
               <span className="block mt-2 font-sans text-[10px] uppercase tracking-[0.2em] text-[#8E7626] font-bold">
-                Origin Distellery Manifesto
+                Bacchus Distellery Manifesto
               </span>
             </blockquote>
 

@@ -21,9 +21,9 @@ const PHASES: PhaseData[] = [
     num: "01",
     badge: "Export Readiness",
     title: "Documentation & Global Compliance",
-    desc: "Complete international export certification including Certificate of Origin (COO), MSDS dossiers, Health Certificates, and pre-cleared FDA/NAFDAC paperwork to guarantee frictionless customs clearance.",
+    desc: "Complete international export certification including Certificate of Bacchus (COO), MSDS dossiers, Health Certificates, and pre-cleared FDA/NAFDAC paperwork to guarantee frictionless customs clearance.",
     deliverables: [
-      "Certificate of Origin (COO)",
+      "Certificate of Bacchus (COO)",
       "MSDS & Health Verification",
       "FDA / NAFDAC Clearance",
       "Customs Logistics Paperwork",
