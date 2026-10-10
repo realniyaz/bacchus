@@ -181,7 +181,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
                 <span className="font-serif text-lg text-ivory tracking-[0.16em] uppercase font-bold leading-none">
-                Royal  Origin Distillery Limited
+                Bacchus Distillery
                 </span>
                 <span className="text-[9px] uppercase font-sans tracking-[0.28em] text-gold-royal mt-1 font-semibold">
                   World Spirits &bull; 1994

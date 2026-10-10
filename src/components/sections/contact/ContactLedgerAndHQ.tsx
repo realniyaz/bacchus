@@ -166,10 +166,10 @@ export default function ContactLedgerAndHQ() {
                   Corporate &amp; Trade Inquiries
                 </span>
                 <a
-                  href="mailto:contact@origindistillery.in"
+                  href="mailto:contact@bacchusdistilleryindia.com"
                   className="font-serif text-sm sm:text-base font-bold text-[#14120E] hover:text-[#8E7626] transition-colors"
                 >
-                  contact@origindistillery.in
+                  contact@bacchusdistilleryindia.com
                 </a>
               </div>
 
