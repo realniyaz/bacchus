@@ -153,10 +153,10 @@ export default function ContactLedgerAndHQ() {
                   Executive Desk
                 </span>
                 <a
-                  href="mailto:md@origindistillery.in"
+                  href="mailto:md@bacchusdistilleryindia.com"
                   className="font-serif text-sm sm:text-base font-bold text-[#14120E] hover:text-[#8E7626] transition-colors"
                 >
-                  md@origindistillery.in
+                  md@bacchusdistilleryindia.com
                 </a>
               </div>
 
