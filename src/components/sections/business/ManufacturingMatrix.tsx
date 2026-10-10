@@ -136,7 +136,7 @@ export default function ManufacturingMatrix() {
 
           <p className="font-sans text-xs sm:text-sm text-[#C3BDAF] font-light max-w-lg leading-relaxed">
             From thermal copper distillation to high-speed contract packaging, our Punjab facility 
-            delivers international consistency across spirit categories[cite: 1, 2].
+            delivers international consistency across spirit categories.
           </p>
         </div>
 
