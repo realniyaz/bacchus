@@ -170,7 +170,7 @@ export default function HeritageOverview() {
 
             <p className="font-sans text-xs sm:text-sm text-[#3D372E] leading-relaxed mb-5 max-w-lg font-normal">
               One of India’s pioneering private spirit houses. From proprietary copper pot distillation 
-              to international cellaring, Origin delivers consistent craftsmanship across 16+ countries.
+              to international cellaring, Bacchus delivers consistent craftsmanship across 16+ countries.
             </p>
 
             {/* Quick Action Badges */}
@@ -260,7 +260,7 @@ export default function HeritageOverview() {
               1992
             </span>
             <span className="text-[9px] uppercase tracking-[0.18em] text-[#8E7626] font-bold block">
-              Distillery Origin
+              Distillery Bacchus
             </span>
           </div>
 
