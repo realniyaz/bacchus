@@ -143,7 +143,7 @@ export default function DistilleryOrigin() {
               className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[16/10] rounded-2xl overflow-hidden border border-[#8E7626]/30 shadow-[0_20px_45px_rgba(40,30,15,0.12)] bg-[#12110F] group"
             >
               <Image
-                src="/assets/about-banner2.png"
+                src="/assets/blend.jpeg"
                 alt="Origin Distillery Punjab copper pot stills and oak barrel cellar"
                 fill
                 priority
@@ -159,10 +159,10 @@ export default function DistilleryOrigin() {
                 <span className="w-2 h-2 rounded-full bg-[#8E7626] animate-pulse" />
                 <div className="flex flex-col">
                   <span className="font-serif text-[11px] sm:text-xs text-[#14120E] font-bold tracking-wider uppercase">
-                    Authentic Copper Stills
+                    Bacchu Distillery
                   </span>
                   <span className="font-sans text-[9px] text-[#6E6554] uppercase tracking-[0.16em] font-medium">
-                    Batch Pot Distillation
+                    Blending
                   </span>
                 </div>
               </div>
@@ -245,16 +245,16 @@ export default function DistilleryOrigin() {
           </div>
 
           <div className="p-4 rounded-xl bg-[#FAF7F0] border border-[#8E7626]/30 shadow-xs flex flex-col">
-            <span className="font-serif text-lg sm:text-xl text-[#8E7626] font-bold">Pure Copper</span>
+            <span className="font-serif text-lg sm:text-xl text-[#8E7626] font-bold">Blending</span>
             <span className="font-sans text-[10px] text-[#6E6554] uppercase tracking-[0.18em] font-semibold mt-1">
-              Pot Distillation Method
+              Blending & Balancing
             </span>
           </div>
 
           <div className="p-4 rounded-xl bg-[#FAF7F0] border border-[#8E7626]/30 shadow-xs flex flex-col">
-            <span className="font-serif text-lg sm:text-xl text-[#8E7626] font-bold">Grain To Glass</span>
+            <span className="font-serif text-lg sm:text-xl text-[#8E7626] font-bold">Art of Blending</span>
             <span className="font-sans text-[10px] text-[#6E6554] uppercase tracking-[0.18em] font-semibold mt-1">
-              Punjab Harvest Barley
+              Flavor Profiling
             </span>
           </div>
 

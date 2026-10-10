@@ -148,7 +148,7 @@ export default function ContactLedgerAndHQ() {
             {/* Channels Directory */}
             <div className="flex flex-col gap-4 border-t border-[#8E7626]/20 pt-6">
               {/* Executive Desk */}
-              <div className="flex flex-col gap-1 p-3.5 rounded-xl bg-[#FFFFFF] border border-[#8E7626]/20 shadow-xs">
+              {/* <div className="flex flex-col gap-1 p-3.5 rounded-xl bg-[#FFFFFF] border border-[#8E7626]/20 shadow-xs">
                 <span className="text-[10px] uppercase font-sans tracking-widest text-[#77736A] font-semibold">
                   Executive Desk
                 </span>
@@ -158,7 +158,7 @@ export default function ContactLedgerAndHQ() {
                 >
                   md@bacchusdistilleryindia.com
                 </a>
-              </div>
+              </div> */}
 
               {/* General Inquiries */}
               <div className="flex flex-col gap-1 p-3.5 rounded-xl bg-[#FFFFFF] border border-[#8E7626]/20 shadow-xs">
@@ -169,7 +169,7 @@ export default function ContactLedgerAndHQ() {
                   href="mailto:contact@bacchusdistilleryindia.com"
                   className="font-serif text-sm sm:text-base font-bold text-[#14120E] hover:text-[#8E7626] transition-colors"
                 >
-                  contact@bacchusdistilleryindia.com
+                  info@bacchusdistilleryindia.com
                 </a>
               </div>
 
@@ -182,7 +182,7 @@ export default function ContactLedgerAndHQ() {
                   href="tel:+911204664253"
                   className="font-serif text-sm sm:text-base font-bold text-[#14120E] hover:text-[#8E7626] transition-colors"
                 >
-                  +91 120 466 4253
+                  +91 9167700016
                 </a>
               </div>
 

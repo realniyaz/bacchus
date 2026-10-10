@@ -289,7 +289,7 @@ export default function Footer() {
                   href="tel:+911204664253"
                   className="text-xs text-ivory hover:text-gold-bright transition-colors font-sans font-medium mt-0.5"
                 >
-                  +91 120 466 4253
+                  +91 9167700016
                 </a>
               </div>
 

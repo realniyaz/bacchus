@@ -176,7 +176,7 @@ export default function AboutHero() {
               href="/contact"
               className="w-full sm:w-auto px-8 sm:px-9 py-3.5 rounded-full bg-surface-1/80 backdrop-blur-md text-ivory border border-gold-royal/35 font-sans font-semibold text-xs uppercase tracking-[0.22em] transition-all duration-300 hover:border-gold-royal hover:text-gold-bright hover:bg-surface-2 text-center cursor-pointer shadow-md"
             >
-              Investor Connect
+              Associate with Bacchus
             </Link>
           </div>
 

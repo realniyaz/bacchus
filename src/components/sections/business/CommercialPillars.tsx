@@ -25,8 +25,8 @@ const COMMERCIAL_MODELS: CommercialModel[] = [
   {
     id: "distribution",
     num: "01",
-    tag: "IMPORT & WHOLESALE",
-    title: "Global Brand Distribution",
+    tag: "Distribution",
+    title: "Brand Distribution",
     lead: "Distribute Origin flagship labels with complete marketing collateral and trade activation support.",
     description:
       "Direct access to our commercially proven brand portfolio including Talsons 12 Single Malt, Jackie’s Crown Blended Whisky, Crazy Boxer XXX Rum, and Rozzita Vodka. Backed by end-to-end POS displays, tasting event kits, and regional marketing allocations.",
@@ -63,8 +63,8 @@ const COMMERCIAL_MODELS: CommercialModel[] = [
   {
     id: "state-ownership",
     num: "03",
-    tag: "DOMESTIC LICENSING",
-    title: "Statewise Brand Ownership",
+    tag: "STATEWISE DISTRIBUTION",
+    title: "Statewise Brand Distribution",
     lead: "Exclusive territorial manufacturing, bottling, and distribution rights for Indian states.",
     description:
       "A rare opportunity for domestic beverage consortiums and regional distillers to secure state-level manufacturing licenses and exclusivity for established, high-growth Bacchus trademarks with local brand equity.",

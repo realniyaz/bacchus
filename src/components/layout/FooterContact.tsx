@@ -183,8 +183,8 @@ export default function FooterContact() {
                   Headquarters
                 </span>
                 <p className="text-xs text-[#2A2620] font-normal leading-relaxed">
-                  B 28, Sector 132, Noida, <br />
-                  Uttar Pradesh - 201304, India
+                 Hambran Industrial Area,<br />
+                   Ludhiana, Punjab 141110
                 </p>
               </div>
 
@@ -200,7 +200,7 @@ export default function FooterContact() {
                   href="tel:+911204664253"
                   className="text-xs text-[#111] font-semibold tracking-wide hover:text-[#8E7626] transition-colors"
                 >
-                  +91 120 466 4253
+                  +91 9167700016
                 </a>
                 <span className="text-[10px] text-[#786E5D] font-sans mt-0.5">
                   Mon – Sat &bull; 09:30 – 18:30 IST
@@ -216,10 +216,10 @@ export default function FooterContact() {
                   Trade Email
                 </span>
                 <a
-                  href="mailto:contact@bacchusdistilleryindia.com"
+                  href="mailto:info@bacchusdistilleryindia.com"
                   className="text-xs text-[#111] font-semibold hover:text-[#8E7626] transition-colors break-all"
                 >
-                  contact@bacchusdistilleryindia.com
+                  info@bacchusdistilleryindia.com
                 </a>
                 <span className="text-[10px] text-[#786E5D] font-sans mt-0.5">
                   Corporate &amp; Institutional Queries

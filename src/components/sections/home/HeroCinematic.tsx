@@ -171,7 +171,7 @@ export default function HeroCinematic() {
               className="group relative w-full sm:w-auto px-10 py-4 rounded-full bg-gold-royal text-obsidian font-sans font-bold text-xs uppercase tracking-[0.22em] overflow-hidden transition-all duration-300 hover:bg-gold-bright shadow-[0_0_25px_rgba(212,175,55,0.32)] hover:shadow-[0_0_35px_rgba(243,211,106,0.5)] text-center cursor-pointer"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
-                Invest in Reserve
+                Associate with Bacchus
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
@@ -200,10 +200,10 @@ export default function HeroCinematic() {
           >
             <div className="flex flex-col items-center lg:items-start p-2 sm:p-2.5 rounded-lg bg-surface-1/70 border border-gold-royal/15 backdrop-blur-sm">
               <span className="text-gold-bright font-serif text-sm sm:text-base font-bold tracking-wider">
-                12 YEARS
+                34 Years
               </span>
               <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-ivory font-medium mt-0.5">
-                Double Wood
+                Experience
               </span>
             </div>
 
@@ -218,10 +218,10 @@ export default function HeroCinematic() {
 
             <div className="flex flex-col items-center lg:items-start p-2 sm:p-2.5 rounded-lg bg-surface-1/70 border border-gold-royal/15 backdrop-blur-sm">
               <span className="text-gold-bright font-serif text-sm sm:text-base font-bold tracking-wider">
-                100%
+                19+ 
               </span>
               <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.2em] text-ivory font-medium mt-0.5">
-                Malt Grain
+                Nations
               </span>
             </div>
           </div>

@@ -100,10 +100,10 @@ export default function InvestorContactBanner() {
               </div>
 
               <h3 className="font-serif text-xl sm:text-2xl text-[#12110F] font-bold mb-1.5">
-                Invest In Reserve
+                Associate with Bacchus
               </h3>
               <p className="font-sans text-xs text-[#575043] leading-relaxed mb-5">
-                Single malt barrel holdings, double-wood maturation programs, and distillery equity allocations.
+                Distribution & Private Labelling.
               </p>
             </div>
 
@@ -132,7 +132,7 @@ export default function InvestorContactBanner() {
                 Commercial Inquiries
               </h3>
               <p className="font-sans text-xs text-[#575043] leading-relaxed mb-5">
-                Inquire for national distributor mandates, duty-free retail, or institutional trade procurement.
+                Inquire for national distributor mandates.
               </p>
             </div>
 
@@ -149,8 +149,8 @@ export default function InvestorContactBanner() {
 
         {/* ================= 3. ONE-LINE COMPACT FOOTER STRIP ================= */}
         <div className="mt-8 pt-4 border-t border-[#8E7626]/20 flex flex-col sm:flex-row items-center justify-between gap-2 text-center text-[10px] text-[#6E6554] font-sans">
-          <span>Noida - 132, UP &bull; +91 120 466 425</span>
-          <span className="text-[#8E7626] font-medium">contact@bacchusdistilleryindia.com</span>
+          <span>Punjab, 141110 &bull; +91 9167700016</span>
+          <span className="text-[#8E7626] font-medium">info@bacchusdistilleryindia.com</span>
         </div>
 
       </div>

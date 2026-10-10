@@ -87,7 +87,7 @@ export default function PartnerConciergeCTA() {
                   href="mailto:contact@bacchusdistilleryindia.com"
                   className="hover:text-[#8E7626] underline transition-colors break-all"
                 >
-                  contact@bacchusdistilleryindia.com
+                  info@bacchusdistilleryindia.com
                 </a>
               </div>
               <div className="flex items-center gap-2 text-[11px] font-sans text-[#77736A]">
